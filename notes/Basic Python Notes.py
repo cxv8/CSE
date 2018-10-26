@@ -34,12 +34,12 @@ car_miles_per_gallon = 0.01
 print("I have a car called %s. It's pretty nice." % car_name)
 
 # Input
-# name = input("What is your name? ")
-# print("Hello %s" % name)
+name = input("What is your name? ")
+print("Hello %s" % name)
 
 # Auto-comment - Ctrl + /
-# age = input("How old are you? ")
-# print("%s?! You belong in a museum." % age)
+age = input("How old are you? ")
+print("%s?! You belong in a museum." % age)
 
 # Hidden age
 real_age = int(input("How old are you? >_"))

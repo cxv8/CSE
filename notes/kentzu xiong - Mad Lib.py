@@ -1,0 +1,15 @@
+print("Today is Monday")
+
+verb = input("Enter an verb ")
+adjective = input("Enter an adjective ")
+noun = input("Enter an noun ")
+verb2 = input("Enter an verb ")
+noun2 = input("Enter an noun ")
+verb3 = input("Enter an verb ")
+adjective2 = input("Enter an adjective ")
+noun3 = input("Enter an noun ")
+adjective3 = input("Enter an adjective ")
+noun4 = input("Enter and noun ")
+print("I have to get ready to go to %s" % noun)("so I started %s." % verb)("When I got to %s" % noun2)("I saw %s" %
+adjective)("%s" % noun3)("and I felt %s knowing where I was." % adjective2)("I was %s inside" % verb2)("and started %s around.")
+("What I saw was %s." % verb3)("I then started %s" % verb4)("back to %s.")
