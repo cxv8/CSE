@@ -1,14 +1,12 @@
 import random
 rounds = 6
-word_a = 'l'
-word_b = 'i'
-word_c = 'o'
-word_d = 'n'
+word_list = ["lion", "tiger", "cat"]
+word_word = word_list
 guess_word = input("Guess a letter ")
-if guess_word != word_a or word_b or word_c or word_d:
+if guess_word != word_list[0] or word_list[1] or word_list[2]:
     print("You did not guessed it.")
     rounds -= 1
-if guess_word == word_a:
+if guess_word == word_list:
     print("You guessed it.")
 if guess_word == word_b:
     print("You guessed it.")
