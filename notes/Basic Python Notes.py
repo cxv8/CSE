@@ -176,7 +176,7 @@ m_list.remove("grapes")
 print(m_list)
 
 # ALSO removing things from the list
-holiday_list.pop(0)  # Removes the item ar index 0
+holiday_list.pop(0)  # Removes the item at index 0
 print(holiday_list)
 
 # Tuple
