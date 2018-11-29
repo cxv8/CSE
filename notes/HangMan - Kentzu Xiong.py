@@ -1,40 +1,18 @@
 import random
+print("Guess the word")
 rounds = 6
-word_list = ["lion", "tiger", "cat"]
-word_word = word_list
+word_list1 = list("lion")
 guess_word = input("Guess a letter ")
-if guess_word != word_list[0] or word_list[1] or word_list[2]:
-    print("You did not guessed it.")
-    rounds -= 1
-if guess_word == word_list:
-    print("You guessed it.")
-if guess_word == word_b:
-    print("You guessed it.")
-if guess_word == word_c:
-    print("You guessed it.")
-if guess_word == word_d:
-    print("You guessed it.")
-while rounds > 0 and guess_word != word_a + word_b + word_c + word_d:
+
+while rounds > 0 and guess_word != word_list1 or ("".join(word_list1)):
     guess_word = input("Guess a letter ")
-    if guess_word != word_a:
+    if guess_word != word_list1 or ("".join(word_list1)):
         print("You did not guessed it.")
         rounds -= 1
-    if guess_word != word_b:
-        print("You did not guessed it.")
-        rounds -= 1
-    if guess_word != word_c:
-        print("You did not guessed it.")
-        rounds -= 1
-    if guess_word != word_d:
-        print("You did not guessed it.")
-        rounds -= 1
-    if guess_word == word_a:
-        print("You guessed it.")
-    if guess_word == word_b:
-        print("You guessed it.")
-    if guess_word == word_c:
-        print("You guessed it.")
-    if guess_word == word_d:
-        print("You guessed it.")
-    if guess_word == word_a + word_b + word_c + word_d:
+    if guess_word == "l":
+        print("You guessed a letter correct.")
+        index = word_list1.index(guess_word)
+        word_list1.pop(index)
+        word_list1.insert(index, "l")
+    if guess_word == ("".join(word_list1)):
         print("The word was lion.")
