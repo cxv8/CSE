@@ -32,13 +32,13 @@ challenge3(6,2)
 
 
 def challenge2(number):
-    if number == 1:
+    if number % 2 == 1:
         print("odd")
-    if number == 2:
+    if number % 2 == 0:
         print("even")
 
 
-challenge2(1)
+challenge2(22)
 
 
 def challenge9(vowel):
@@ -89,11 +89,11 @@ def challenge8(number):
 challenge8(1859)
 
 
-def challenge10(n):
+def challenge10(w):
     w = input("type in a number ")
-    if n == w:
+    if w == input():
         print("digit")
-    if n != w:
+    if w != "":
         print("string")
 
 
