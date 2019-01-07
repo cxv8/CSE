@@ -58,7 +58,7 @@ def challenge9(vowel):
         print("not a vowel")
 
 
-challenge9("l")
+challenge9("e")
 
 
 def challenge6(raduis):
@@ -90,11 +90,29 @@ challenge8(1859)
 
 
 def challenge10(w):
-    w = input("type in a number ")
-    if w == input():
+    w = input("Enter a number ")
+    if w.isdigit():
         print("digit")
-    if w != "":
+    else:
         print("string")
 
 
-challenge10("1")
+challenge10(12)
+
+import datetime
+def challenge11(t):
+    t.datetime.now().time()
+    print(t.datetime.now().time())
+
+
+challenge11(datetime)
+
+
+def challenge12(a,b,c):
+    for i in range(1,min(a,b)+1):
+        if a%i==b%i==0:
+            c = i
+            print(c)
+
+
+challenge12(22,44,0)
