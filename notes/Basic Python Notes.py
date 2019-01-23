@@ -147,8 +147,6 @@ for item in shopping_list:
 
 
 my_list = ["Robot", "airplane", "Turkey", "juice"]
-my_list[2] = "grape"
-print("New word is %s" % my_list[len(my_list) - 1])
 print(my_list)
 
 # Getting part of a list
@@ -156,6 +154,8 @@ print(my_list[1:3])
 print(my_list[1:4])
 print(my_list[1:])
 print(my_list[:2])
+my_list[2] = "grape"
+print("New word is %s" % my_list[len(my_list) - 1])
 
 # Adding things to a list
 holiday_list = [] # ALWAYS USE SQUARE BRACKETS
@@ -193,12 +193,25 @@ string1 = "turquoise"
 list1 = list(string1)
 print(list1)
 
-for character in list1:
-    if character == "u":
-        # replace with a
-        current_index = list1.index(character)
-        list1.pop(current_index)
-        list1.insert(current_index, "*")
+guess = input("Letter ")
+for guess in range(list1):
+    # replace with a
+    current_index = list1.index(guess)
+    list1.pop(current_index)
+    list1.insert(current_index, "*")
 
 #Changing list into strings
 print("".join(list1))
+"""
+    if guess != guess_word or word:
+        print("You did not guessed it.")
+        rounds -= 1
+    if guess == guess_word or word:
+        print("correct.")
+        
+         if guess == ("".join(word)):
+        print("The word was lion.")
+
+if leter.upper == .upper():
+"""
+
