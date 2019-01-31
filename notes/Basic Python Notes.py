@@ -202,16 +202,4 @@ for character in list1:
 
 # Changing list into strings
 print("".join(list1))
-"""
-    if guess != guess_word or word:
-        print("You did not guessed it.")
-        rounds -= 1
-    if guess == guess_word or word:
-        print("correct.")
-        
-         if guess == ("".join(word)):
-        print("The word was lion.")
-
-if leter.upper == .upper():
-"""
 

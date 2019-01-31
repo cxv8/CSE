@@ -1,3 +1,4 @@
+
 states = {
     "CA": "California",
     "VA": "Virginia",
@@ -9,54 +10,54 @@ states = {
 print(states["CA"])
 print(states["NV"])
 
-states_dictionary = {
+nested_dictionary = {
     "CA": {
         "NAME": "California",
-        "POPULATION": 39540000
+        "POPULATION": 39557045  # 39,557,045
     },
     "VA": {
         "NAME": "Virginia",
-        "POPULATION": 8500000
+        "POPULATION": 8517685  # 8,517,685
     },
     "MD": {
         "NAME": "Maryland",
-        "POPULATION": 6000000
+        "POPULATION": 6042718  # 6,042,718
     },
     "RI": {
         "NAME": "Rhode Island",
-        "POPULATION": 1060000
+        "POPULATION": 1057315  # 1,057,315
     },
     "NV": {
         "NAME": "Nevada",
-        "POPULATION": 3057315
+        "POPULATION": 3034392  # 3,023,392
     }
 }
 
-print(states_dictionary["NV"]["POPULATION"])
-print(states_dictionary["RI"]["NAME"])
+print(nested_dictionary["NV"]["POPULATION"])
+print(nested_dictionary["RI"]["NAME"])
 
-states_dictionary2 = {
+complex_dictionary = {
     "CA": {
         "NAME": "California",
-        "POPULATION": 39540000,
+        "POPULATION": 39557045,  # 39,557,045
         "CITIES": [
-            "FRESNO",
+            "Fresno",
             "San Francisco",
             "Los Angeles"
         ]
     },
     "VA": {
         "NAME": "Virginia",
-        "POPULATION": 8500000,
+        "POPULATION": 8517685,  # 8,517,685
         "CITIES": [
             "Richmond",
             "Norfolk",
-            "Alexander"
+            "Alexandria"
         ]
     },
     "MD": {
         "NAME": "Maryland",
-        "POPULATION": 6000000,
+        "POPULATION": 6042718,  # 6,042,718
         "CITIES": [
             "Bethesda",
             "Baltimore",
@@ -65,7 +66,7 @@ states_dictionary2 = {
     },
     "RI": {
         "NAME": "Rhode Island",
-        "POPULATION": 1060000,
+        "POPULATION": 1057315,  # 1,057,315
         "CITIES": [
             "Providence",
             "Newport",
@@ -74,31 +75,36 @@ states_dictionary2 = {
     },
     "NV": {
         "NAME": "Nevada",
-        "POPULATION": 3057315,
+        "POPULATION": 3034392,  # 3,023,392
         "CITIES": [
-            "Carson City"
-            "Las Vegas"
+            "Carson City",
+            "Las Vegas",
             "Reno"
         ]
     }
 }
-print(states_dictionary2["RI"]["CITIES"][2])
-print(states_dictionary2["VA"]["NAME"])
-print(states_dictionary2["MD"]["CITIES"][0])
 
-print(states_dictionary2.keys())
-print(states_dictionary2.items())
+print(complex_dictionary["RI"]["CITIES"][2])
+
+# Open your notes, and get it to say "Virginia",
+# Then get it to say "Bethesda"
+
+print(complex_dictionary["VA"]["NAME"])
+print(complex_dictionary["MD"]["CITIES"][0])
+
+print(complex_dictionary.keys())
+print(nested_dictionary.items())
 
 print()
-for key, value in states_dictionary2.items():
+for key, value in complex_dictionary.items():
     print(key)
     print(value)
     print("-" * 20)
 
-for states, facts in states_dictionary2.items():
+# We're going to make this look great...
+for state, facts in complex_dictionary.items():
     for attr, value in facts.items():
         print(attr)
         print(value)
         print("-" * 20)
-    print("=" * 20)
-
+    print('=' * 20)
