@@ -4,7 +4,6 @@ print("Guess the word")
 a = string.ascii_lowercase
 print("These are the letters " + a)
 rounds = 8
-word_bank = ['turtle']
 word_bank = ['turtle', 'pink', 'cat', 'dog', 'white', 'cyan', 'night', 'daytime', 'beach', 'lion']
 word = random.choice(word_bank)
 guess_word = list(word)
