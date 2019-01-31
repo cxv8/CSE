@@ -83,4 +83,22 @@ states_dictionary2 = {
     }
 }
 print(states_dictionary2["RI"]["CITIES"][2])
+print(states_dictionary2["VA"]["NAME"])
+print(states_dictionary2["MD"]["CITIES"][0])
+
+print(states_dictionary2.keys())
+print(states_dictionary2.items())
+
+print()
+for key, value in states_dictionary2.items():
+    print(key)
+    print(value)
+    print("-" * 20)
+
+for states, facts in states_dictionary2.items():
+    for attr, value in facts.items():
+        print(attr)
+        print(value)
+        print("-" * 20)
+    print("=" * 20)
 
