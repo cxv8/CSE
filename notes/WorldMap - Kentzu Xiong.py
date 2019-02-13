@@ -27,14 +27,28 @@ world_map = {
     'Kitchen': {
         'NAME': 'Kitchen',
         'DESCRIPTION': 'You are in the Kitchen.'
-                       'There are freshly made food sitting on the stove.'
+                       'There are freshly made food sitting on the stove.',
+        'PATHS': {
+            'EAST': 'Living room'
+        }
     },
     'Outside': {
         'NAME': 'Outside the house',
         'DESCRIPTION': 'You are outside your house but nobody in sight.'
-                       "You see your parents car but it's locked",
+                       "You see your parents car but it's locked."
+                       "Towards the east is your parents laboratory and it is not so far.",
         'PATHS': {
-
+            'EAST': 'Laboratory',
+            'NORTH': 'Living room'
+        }
+    },
+    'Laboratory': {
+        'NAME': 'Laboratory',
+        'DESCRIPTION': 'You are at the laboratory.'
+                       'The door is toward east but the door needs a key card to open.',
+        'PATHS': {
+            'EAST': 'Laboratory door',
+            'WEST': 'Outside'
         }
     }
 }
