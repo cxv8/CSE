@@ -9,10 +9,10 @@ world_map = {
     },
     'Hallway': {
         'NAME': "Hallway",
-        'DESCRIPTION': 'You are in the hallway and all doors open'
+        'DESCRIPTION': 'You are in the hallway and all doors locked but yours'
                        'Towards south is the living room.',
         'PATHS': {
-            'SOUTH': 'Living room'
+            'SOUTH': 'Living room',
         }
     },
     'Living room': {
@@ -45,10 +45,31 @@ world_map = {
     'Laboratory': {
         'NAME': 'Laboratory',
         'DESCRIPTION': 'You are at the laboratory.'
-                       'The door is toward east but the door needs a key card to open.',
+                       'There is a broken door toward east.',
         'PATHS': {
-            'EAST': 'Laboratory door',
+            'EAST': 'Inside laboratory',
             'WEST': 'Outside'
         }
+    },
+    'Inside laboratory': {
+        'NAME': 'Inside Laboratory',
+        'DESCRIPTION': 'There are 3 doors'
+                       'east lab, north lab, and south lab.',
+        'PATHS': {
+            'EAST': 'East lab',
+            'NORTH': 'North lab',
+            'SOUTH': 'South lab'
+        }
+
+    },
+    'East lab': {
+        'NAME': 'East lab',
+        'DESCRIPTION': 'There is a outline of the laboratory',
+        'PATHS': {
+            'WEST': 'Inside laboratory'
+        }
+    },
+    'North lab': {
+
     }
 }
