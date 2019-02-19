@@ -11,6 +11,7 @@ hidden = []
 for i in range(len(guess_word)):
     hidden.append("*")
 print ("".join(hidden))
+guess = []
 while rounds > 0 and hidden != guess_word:
     guess = input("Guess a letter ").lower()
 

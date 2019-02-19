@@ -193,13 +193,13 @@ string1 = "turquoise"
 list1 = list(string1)
 print(list1)
 
-guess = input("Letter ")
-for guess in range(list1):
-    # replace with a
-    current_index = list1.index(guess)
-    list1.pop(current_index)
-    list1.insert(current_index, "*")
+for character in list1:
+    if character == "u":
+        # replace with a *
+        current_index = list1.index(character)
+        list1.pop(current_index)
+        list1.insert(current_index, "*")
 
-#Changing list into strings
+# Changing list into strings
 print("".join(list1))
 
