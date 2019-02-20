@@ -1,6 +1,6 @@
 world_map = {
-    'House': {
-        'NAME': "My House",
+    'Bedroom': {
+        'NAME': "Bedroom",
         'DESCRIPTION': "You are in your house and getting out of bed."
                        "There is a door east of your bed.",
         'PATHS': {
@@ -13,6 +13,7 @@ world_map = {
                        'Towards south is the living room.',
         'PATHS': {
             'SOUTH': 'Living room',
+            'WEST': 'Bedroom'
         }
     },
     'Living room': {
@@ -21,7 +22,8 @@ world_map = {
                        'To the west is the kitchen and toward the south is the door to outside.',
         'PATHS': {
             'WEST': 'Kitchen',
-            'SOUTH': 'Outside'
+            'SOUTH': 'Outside',
+            'NORTH': 'Hallway'
         }
     },
     'Kitchen': {
@@ -58,18 +60,20 @@ world_map = {
         'PATHS': {
             'EAST': 'East lab',
             'NORTH': 'North lab',
-            'SOUTH': 'South lab'
+            'SOUTH': 'South lab',
+            'WEST': 'Laboratory'
         }
 
     },
     'East lab': {
         'NAME': 'East lab',
-        'DESCRIPTION': 'There is a outline of the laboratory',
+        'DESCRIPTION': 'There is a blueprint on a table.',
         'PATHS': {
             'WEST': 'Inside laboratory'
         }
     },
     'North lab': {
-
+        'NAME': 'North lab',
+        'Description': 'There are tools here maybe I could use them to build something'
     }
 }
