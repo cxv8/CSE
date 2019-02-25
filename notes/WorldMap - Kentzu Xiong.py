@@ -74,6 +74,12 @@ world_map = {
     },
     'North lab': {
         'NAME': 'North lab',
-        'Description': 'There are tools here maybe I could use them to build something'
+        'Description': 'There are tools here maybe I could use them to build something later',
+        'PATHS': {
+            'SOUTH': 'Inside laboratory'
+        }
+    },
+    'South lab': {
+        
     }
 }
