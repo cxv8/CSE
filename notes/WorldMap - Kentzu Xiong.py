@@ -74,12 +74,23 @@ world_map = {
     },
     'North lab': {
         'NAME': 'North lab',
-        'Description': 'There are tools here maybe I could use them to build something later',
+        'DESCRIPTION': 'There are tools here maybe I could use them to build something later',
         'PATHS': {
             'SOUTH': 'Inside laboratory'
         }
     },
     'South lab': {
-        
+        'NAME': 'South lab',
+        'DESCRIPTION': 'There are tables and shelves but it is all empty.'
+                       'A tile in the floor looks odd.',
+        'PATHS': {
+            'DOWN': 'Below laboratory',
+            'NORTH': 'Inside laboratory'
+        }
+    },
+    'Below laboratory': {
+        'NAME': 'Below laboratory',
+        'DESCRIPTION': 'The place is a mess '
+                       'There is a door towards south and '
     }
 }
