@@ -23,9 +23,6 @@ class ToyCar(object):
         self.twist = 3
         print("You twisted the car 3 times.")
 
-    def Where(self):
-
-
 
 My_car = ToyCar(5,True,30)
 
