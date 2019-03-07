@@ -5,10 +5,11 @@ class Item(object):
 
 
 class Sword(Item):
-    def __init__(self, name, material):
+    def __init__(self, name, material, dmg=20):
         super(Sword, self).__init__(name, material)
         self.equip = True
         self.use = False
+        self.dmg = dmg
 
     def hold(self):
         self.equip = True
@@ -24,11 +25,11 @@ class Sword(Item):
 
 
 class FireSword(Sword):
-    def __init__(self, name, material, shoot=False):
+    def __init__(self, name, material, shoot=False, dmg=35):
         super(FireSword, self).__init__(name, material)
         self.shoot = shoot
         self.ammo = 5
-        self.dmg = 35
+        self.dmg = dmg
 
     def fireball(self, shots):
         if self.shoot:
@@ -49,11 +50,11 @@ class FireSword(Sword):
 
 
 class LightningSword(Sword):
-    def __init__(self, name, material, shoot=False):
+    def __init__(self, name, material, shoot=False, dmg=45):
         super(LightningSword, self).__init__(name, material)
         self.shoot = shoot
         self.ammo = 5
-        self.dmg = 45
+        self.dmg = dmg
 
     def lightning(self, shots):
         if self.shoot:
@@ -74,11 +75,11 @@ class LightningSword(Sword):
 
 
 class WindSword(Sword):
-    def __init__(self, name, material, shoot=False):
+    def __init__(self, name, material, shoot=False, dmg=25):
         super(WindSword, self).__init__(name, material)
         self.shoot = shoot
         self.ammo = 5
-        self.dmg = 25
+        self.dmg = dmg
 
     def wind(self, shots):
         if self.shoot:
@@ -99,11 +100,11 @@ class WindSword(Sword):
 
 
 class WaterSword(Sword):
-    def __init__(self, name, material, shoot=False):
+    def __init__(self, name, material, shoot=False, dmg=25):
         super(WaterSword, self).__init__(name, material)
         self.shoot = shoot
         self.ammo = 5
-        self.dmg = 25
+        self.dmg = dmg
 
     def water(self, shots):
         if self.shoot:
@@ -124,11 +125,11 @@ class WaterSword(Sword):
 
 
 class EarthSword(Sword):
-    def __init__(self, name, material, shoot=False):
+    def __init__(self, name, material, shoot=False, dmg=30):
         super(EarthSword, self).__init__(name, material)
         self.shoot = shoot
         self.ammo = 5
-        self.dmg = 30
+        self.dmg = dmg
 
     def earth(self, shots):
         if self.shoot:
@@ -170,3 +171,76 @@ class Bow(Item):
     def reload(self):
         self.arrow = 10
         print("You reloaded your arrows.")
+
+
+class WindBow(Item):
+    def __init__(self, name, material, shoot=False):
+        super(WindBow, self).__init__(name, material)
+        self.shoot = shoot
+        self.arrow = 12
+        self.dmg = 25
+        self.knockback = 30
+
+    def shoot(self, shots):
+        if self.shoot:
+            if self.arrow <= 0:
+                print("You need to reload.")
+            elif self.arrow < shots:
+                print("You shot %s wind arrow and ran out." % self.arrow)
+            if self.shoot:
+                print("You knocked the target back.")
+            else:
+                print("You shoot %s wind arrow." % self.arrow)
+                self.arrow -= shots
+        else:
+            print("You can't shoot.")
+
+    def reload(self):
+        self.arrow = 10
+        print("You reloaded your arrows.")
+
+
+class Axe(Sword):
+    def __init__(self):
+        super(Axe, self).__init__("Axe", "Wood")
+        self.chopspeed = 20
+
+
+class FasterAxe(Sword):
+    def __init__(self):
+        super(FasterAxe, self).__init__("Faster Axe", "Speed ore")
+
+
+class LongSword(Sword):
+    def __init__(self):
+        super(LongSword, self).__init__("Long Sword", "Metal")
+
+
+class SLongSword(Sword):
+    def __init__(self):
+        super(SLongSword, self).__init__("Steel LongSword", "Steel")
+
+
+class HealPotion(Item):
+    def __init__(self, name, material):
+        super(HealPotion, self).__init__(name, material)
+        self.heal = 50
+
+    def heal(self):
+        if self.heal:
+            print("You heal 50 hp.")
+
+
+class StaminaPotion(Item):
+    def __init__(self, name, material):
+        super(StaminaPotion, self).__init__(name, material)
+        self.stamina = 50
+
+    def stamina(self):
+        if self.stamina:
+            print("You gained 50 stamina")
+
+
+class MegaPotion(StaminaPotion, HealPotion):
+    def __init__(self):
+        super(MegaPotion, self).__init__("Mega Potion", "Regen flower and Stamina flower")

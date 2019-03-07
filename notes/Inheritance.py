@@ -8,7 +8,7 @@ class Car(Vehicle):
     def __init__(self, name, engine_type, body_type):
         super(Car, self).__init__(name, engine_type)
         self.body_type = body_type
-        self.stering_wheel = True
+        self.steering_wheel = True
         self.engine_status = False
         self.fuel = 100
 

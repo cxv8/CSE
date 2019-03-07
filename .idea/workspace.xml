@@ -33,13 +33,14 @@
     <session id="-682953300">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.40" value="2" />
+          <entry key="project.open.time.44" value="1" />
           <entry key="project.open.time.64" value="2" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -56,23 +57,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="4467" />
+          <entry key="py" value="5821" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="4467" />
+          <entry key="Python" value="5821" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/notes/WorldMap - Kentzu Xiong.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="294">
-              <caret line="84" column="58" lean-forward="true" selection-start-line="84" selection-start-column="58" selection-end-line="84" selection-end-column="58" />
+              <caret line="84" column="58" selection-start-line="84" selection-start-column="58" selection-end-line="84" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -81,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/notes/create object - kentzu xiong.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+              <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -101,27 +102,34 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/notes/Inheritance.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-373">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="170">
+              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
               <folding>
-                <marker date="1551461066222" expanded="true" signature="22:27" ph="..." />
-                <marker date="1551461066222" expanded="true" signature="141:146" ph="..." />
-                <marker date="1551461066222" expanded="true" signature="405:414" ph="..." />
-                <marker date="1551461066222" expanded="true" signature="784:789" ph="..." />
-                <marker date="1551461066222" expanded="true" signature="899:1144" ph="..." />
+                <marker date="1551975346729" expanded="true" signature="22:27" ph="..." />
+                <marker date="1551975346729" expanded="true" signature="141:146" ph="..." />
+                <marker date="1551975346729" expanded="true" signature="406:415" ph="..." />
+                <marker date="1551975346729" expanded="true" signature="785:790" ph="..." />
+                <marker date="1551975346729" expanded="true" signature="900:1145" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/notes/Items.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="144" lean-forward="true" selection-start-line="144" selection-end-line="144" />
+            <state relative-caret-position="375">
+              <caret line="240" column="21" lean-forward="true" selection-start-line="240" selection-start-column="21" selection-end-line="240" selection-end-column="21" />
               <folding>
-                <marker date="1551890602234" expanded="true" signature="1392:1397" ph="..." />
-                <marker date="1551890602234" expanded="true" signature="4316:4321" ph="..." />
+                <marker date="1551976980393" expanded="true" signature="1440:1445" ph="..." />
+                <marker date="1551976980393" expanded="true" signature="4392:4397" ph="..." />
+                <marker date="1551976980393" expanded="true" signature="5888:5893" ph="..." />
+                <marker date="1551976980393" expanded="true" signature="6015:6020" ph="..." />
+                <marker date="1551976980393" expanded="true" signature="6132:6137" ph="..." />
+                <marker date="1551976980393" expanded="true" signature="6246:6251" ph="..." />
+                <marker date="1551976980393" expanded="true" signature="6365:6370" ph="..." />
+                <marker date="1551976980393" expanded="true" signature="6594:6599" ph="..." />
+                <marker date="1551976980393" expanded="true" signature="6859:6864" ph="..." />
               </folding>
             </state>
           </provider>
@@ -185,12 +193,12 @@
         <option value="$PROJECT_DIR$/notes/Special_Random.py" />
         <option value="$PROJECT_DIR$/notes/create object.py" />
         <option value="$PROJECT_DIR$/notes/World Map OOP.py" />
-        <option value="$PROJECT_DIR$/notes/Inheritance.py" />
         <option value="$PROJECT_DIR$/notes/Items - kentzu xiong.py" />
         <option value="$PROJECT_DIR$/notes/create object.py___jb_tmp___" />
         <option value="$PROJECT_DIR$/notes/create object - kentzu xiong.py" />
-        <option value="$PROJECT_DIR$/notes/Items.py" />
         <option value="$PROJECT_DIR$/notes/WorldMap - Kentzu Xiong.py" />
+        <option value="$PROJECT_DIR$/notes/Inheritance.py" />
+        <option value="$PROJECT_DIR$/notes/Items.py" />
       </list>
     </option>
   </component>
@@ -211,6 +219,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -227,10 +236,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/cxv8/Documents/GitHub/CSE/notes/Inheritance.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -396,7 +405,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29425114" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2987897" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -456,17 +465,32 @@
     <entry file="file://$PROJECT_DIR$/CSE/notes/Object Notes -kentzu xiong.py" />
     <entry file="file://$PROJECT_DIR$/CSE/notes/create object.py" />
     <entry file="file://$PROJECT_DIR$/notes/Items" />
-    <entry file="file://$PROJECT_DIR$/notes/create object.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/create object.py" />
     <entry file="file://$PROJECT_DIR$/notes/Object Notes -kentzu xiong.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/create object.py___jb_tmp___">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/WorldMap - Kentzu Xiong.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="84" column="58" selection-start-line="84" selection-start-column="58" selection-end-line="84" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/create object - kentzu xiong.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -507,49 +531,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notes/create object.py___jb_tmp___">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notes/create object - kentzu xiong.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/notes/Inheritance.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-373">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="170">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
           <folding>
-            <marker date="1551461066222" expanded="true" signature="22:27" ph="..." />
-            <marker date="1551461066222" expanded="true" signature="141:146" ph="..." />
-            <marker date="1551461066222" expanded="true" signature="405:414" ph="..." />
-            <marker date="1551461066222" expanded="true" signature="784:789" ph="..." />
-            <marker date="1551461066222" expanded="true" signature="899:1144" ph="..." />
+            <marker date="1551975346729" expanded="true" signature="22:27" ph="..." />
+            <marker date="1551975346729" expanded="true" signature="141:146" ph="..." />
+            <marker date="1551975346729" expanded="true" signature="406:415" ph="..." />
+            <marker date="1551975346729" expanded="true" signature="785:790" ph="..." />
+            <marker date="1551975346729" expanded="true" signature="900:1145" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notes/Items.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="144" lean-forward="true" selection-start-line="144" selection-end-line="144" />
+        <state relative-caret-position="375">
+          <caret line="240" column="21" lean-forward="true" selection-start-line="240" selection-start-column="21" selection-end-line="240" selection-end-column="21" />
           <folding>
-            <marker date="1551890602234" expanded="true" signature="1392:1397" ph="..." />
-            <marker date="1551890602234" expanded="true" signature="4316:4321" ph="..." />
+            <marker date="1551976980393" expanded="true" signature="1440:1445" ph="..." />
+            <marker date="1551976980393" expanded="true" signature="4392:4397" ph="..." />
+            <marker date="1551976980393" expanded="true" signature="5888:5893" ph="..." />
+            <marker date="1551976980393" expanded="true" signature="6015:6020" ph="..." />
+            <marker date="1551976980393" expanded="true" signature="6132:6137" ph="..." />
+            <marker date="1551976980393" expanded="true" signature="6246:6251" ph="..." />
+            <marker date="1551976980393" expanded="true" signature="6365:6370" ph="..." />
+            <marker date="1551976980393" expanded="true" signature="6594:6599" ph="..." />
+            <marker date="1551976980393" expanded="true" signature="6859:6864" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notes/WorldMap - Kentzu Xiong.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="84" column="58" lean-forward="true" selection-start-line="84" selection-start-column="58" selection-end-line="84" selection-end-column="58" />
         </state>
       </provider>
     </entry>
