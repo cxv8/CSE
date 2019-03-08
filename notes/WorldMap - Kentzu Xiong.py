@@ -90,7 +90,10 @@ world_map = {
     },
     'Below laboratory': {
         'NAME': 'Below laboratory',
-        'DESCRIPTION': 'The place is a mess '
-                       'There is a door towards south and '
+        'DESCRIPTION': 'There are shelves and broken glass everywhere.'
+                       'There is a door towards south and north.',
+        'PATHS': {
+            'UP': ''
+        }
     }
 }
