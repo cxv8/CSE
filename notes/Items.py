@@ -202,23 +202,26 @@ class WindBow(Item):
 
 class Axe(Sword):
     def __init__(self):
-        super(Axe, self).__init__("Axe", "Wood")
+        super(Axe, self).__init__("Starter Axe", "Metal")
         self.chopspeed = 20
 
 
 class FasterAxe(Sword):
     def __init__(self):
         super(FasterAxe, self).__init__("Faster Axe", "Speed ore")
+        self.chopspeed = 35
 
 
 class LongSword(Sword):
     def __init__(self):
         super(LongSword, self).__init__("Long Sword", "Metal")
+        self.dmg = 25
 
 
 class SLongSword(Sword):
     def __init__(self):
         super(SLongSword, self).__init__("Steel LongSword", "Steel")
+        self.dmg = 35
 
 
 class HealPotion(Item):
@@ -241,6 +244,55 @@ class StaminaPotion(Item):
             print("You gained 50 stamina")
 
 
-class MegaPotion(StaminaPotion, HealPotion):
-    def __init__(self):
-        super(MegaPotion, self).__init__("Mega Potion", "Regen flower and Stamina flower")
+class MegaPotion(Item):
+    def __init__(self, name, material):
+        super(MegaPotion, self).__init__(name, material)
+        self.potion = 50
+
+    def potion(self):
+        if self.potion:
+            print("You gained 50 stamina and health")
+
+
+my_sword = Sword("Starter sword", "Metal")
+my_sword.swing()
+
+my_Fsword = FireSword("Fire Sword", "Flame Ore")
+my_Fsword.fireball(3)
+
+my_Lsword = LightningSword("Linghtning Sword", "Lightning Ore")
+my_Lsword.lightning(5)
+
+my_Wsword = WaterSword("Water Sword", "Water Ore")
+my_Wsword.water(2)
+
+my_Esword = EarthSword("Earth Sword", "Earth Ore")
+my_Esword.swing()
+
+my_WIsword = WindSword("Wind Sword", "Earth Ore")
+my_WIsword.wind(3)
+
+my_hp = HealPotion("Health Potion", "Healing Flower")
+my_hp.heal()
+
+my_stamina = StaminaPotion("Stamina Potion", "Stamina Flower")
+my_stamina.stamina()
+
+my_hs = MegaPotion("Mega Potion", "Healing and Stamina Flower")
+my_hs.potion()
+
+my_axe = Axe
+my_axe.swing()
+
+my_Faxe = FasterAxe
+my_Faxe.swing()
+
+my_Longsword = LongSword
+my_Longsword.swing()
+
+my_SLongsword = SLongSword
+my_SLongsword.swing()
+
+my_bow = Bow("Starter Bow", "Wood")
+my_bow.shoot()
+
