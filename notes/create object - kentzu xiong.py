@@ -1,5 +1,5 @@
 class ToyCar(object):
-    def __init__(self,speed,motion=True,distance=30):
+    def __init__(self,speed,motion=True,distance=10):
         self.twist = 3
         self.direction = True
         self.speed = speed
