@@ -40,5 +40,8 @@ my_water_gun.pump_it_up()
 my_water_gun.shoot(1)
 wiebe_water_gun.shoot(5)
 wiebe_water_gun.shoot(1)
+your_water_gun.shoot(3)
+your_water_gun.shoot(4)
+your_water_gun.pump_it_up()
 
 print(Special_Random.Randomwiebe.special_random())

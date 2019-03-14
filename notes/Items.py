@@ -5,7 +5,7 @@ class Item(object):
 
 
 class Sword(Item):
-    def __init__(self, name, material, use=True, equip=False):
+    def __init__(self, name, material, use=True, equip=True):
         super(Sword, self).__init__(name, material)
         self.equip = equip
         self.use = use
@@ -21,6 +21,10 @@ class Sword(Item):
     def stop(self):
         self.use = False
         print("You stopped using the %s" % self.name)
+
+    def unequip(self):
+        self.equip = False
+        print("You unequipped the item.")
 
 
 class FireSword(Sword):
@@ -161,6 +165,7 @@ class Bow(Item):
                 print("You need to reload.")
             elif self.arrow < shots:
                 print("You shot %s arrow and ran out." % self.arrow)
+                self.arrow = 0
             else:
                 print("You shoot %s arrow." % self.arrow)
                 self.arrow -= shots
@@ -180,7 +185,7 @@ class WindBow(Item):
         self.dmg = 25
         self.knockback = 30
 
-    def shoot(self, shots):
+    def shot(self, shots):
         if self.shoot:
             if self.arrow <= 0:
                 print("You need to reload.")
@@ -202,13 +207,13 @@ class WindBow(Item):
 class Axe(Sword):
     def __init__(self):
         super(Axe, self).__init__("Starter Axe", "Metal", True, True)
-        self.chopspeed = 20
+        self.chop_speed = 20
 
 
 class FasterAxe(Sword):
     def __init__(self):
         super(FasterAxe, self).__init__("Faster Axe", "Speed ore", True, True)
-        self.chopspeed = 35
+        self.chop_speed = 35
 
 
 class LongSword(Sword):
@@ -280,20 +285,20 @@ stamina.stamina()
 hs = MegaPotion("Mega Potion", "Healing and Stamina Flower", True)
 hs.potion()
 
-my_axe = Axe
+my_axe = Axe()
 my_axe.swing()
 
-my_Faxe = FasterAxe
+my_Faxe = FasterAxe()
 my_Faxe.swing()
 
-my_Longsword = LongSword
+my_Longsword = LongSword()
 my_Longsword.swing()
 
-my_SLongsword = SLongSword
+my_SLongsword = SLongSword()
 my_SLongsword.swing()
 
-my_bow = Bow("Starter Bow", "Wood", True)
-my_bow.shot(3)
+my_bow = Bow("Starter Bow", "Wood")
+my_bow.shot(4)
 
-my_Wbow = WindBow("Wind Bow", "Wind ore", True)
-
+my_Wbow = WindBow("Wind Bow", "Wind ore")
+my_Wbow.shot(3)
