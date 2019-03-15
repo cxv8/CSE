@@ -16,7 +16,7 @@ class Sword(Item):
         print("You have %s equipped." % self.name)
 
     def swing(self):
-        print("You swung your sword.")
+        print("You swung your weapon.")
 
     def stop(self):
         self.use = False
@@ -42,7 +42,7 @@ class FireSword(Sword):
                 print("You shot %s fireball and ran out." % self.ammo)
                 self.ammo = 0
             else:
-                print("You shoot %s fireball." % self.ammo)
+                print("You shoot %s fireball(s)." % shots)
                 self.ammo -= shots
         else:
             print("You can't shoot.")
@@ -67,7 +67,7 @@ class LightningSword(Sword):
                 print("You shot %s lightning bolt and ran out." % self.ammo)
                 self.ammo = 0
             else:
-                print("You shoot %s lightning bolt." % self.ammo)
+                print("You shoot %s lightning bolt(s)." % shots)
                 self.ammo -= shots
         else:
             print("You can't shoot.")
@@ -92,7 +92,7 @@ class WindSword(Sword):
                 print("You blew %s gust of wind and ran out." % self.ammo)
                 self.ammo = 0
             else:
-                print("You blew %s gust of wind." % self.ammo)
+                print("You blew %s gust of wind(s)." % shots)
                 self.ammo -= shots
         else:
             print("You can't shoot.")
@@ -117,7 +117,7 @@ class WaterSword(Sword):
                 print("You shot %s water bullet and ran out." % self.ammo)
                 self.ammo = 0
             else:
-                print("You shoot %s water bullet." % self.ammo)
+                print("You shoot %s water bullet(s)." % shots)
                 self.ammo -= shots
         else:
             print("You can't shoot.")
@@ -142,7 +142,7 @@ class EarthSword(Sword):
                 print("You shot %s block of rock and ran out." % self.ammo)
                 self.ammo = 0
             else:
-                print("You shoot %s block of rock." % self.ammo)
+                print("You shoot %s block of rock(s)." % shots)
                 self.ammo -= shots
         else:
             print("You can't shoot.")
@@ -153,9 +153,9 @@ class EarthSword(Sword):
 
 
 class Bow(Item):
-    def __init__(self, name, material, shoot=True):
+    def __init__(self, name, material):
         super(Bow, self).__init__(name, material)
-        self.shoot = shoot
+        self.shoot = True
         self.arrow = 10
         self.dmg = 20
 
@@ -167,7 +167,7 @@ class Bow(Item):
                 print("You shot %s arrow and ran out." % self.arrow)
                 self.arrow = 0
             else:
-                print("You shoot %s arrow." % self.arrow)
+                print("You shoot %s arrow(s)." % shots)
                 self.arrow -= shots
         else:
             print("You can't shoot.")
@@ -183,7 +183,6 @@ class WindBow(Item):
         self.shoot = shoot
         self.arrow = 12
         self.dmg = 25
-        self.knockback = 30
 
     def shot(self, shots):
         if self.shoot:
@@ -191,10 +190,8 @@ class WindBow(Item):
                 print("You need to reload.")
             elif self.arrow < shots:
                 print("You shot %s wind arrow and ran out." % self.arrow)
-            if self.shoot:
-                print("You knocked the target back.")
             else:
-                print("You shoot %s wind arrow." % self.arrow)
+                print("You shoot %s wind arrow(s) knocking them your target back." % shots)
                 self.arrow -= shots
         else:
             print("You can't shoot.")
