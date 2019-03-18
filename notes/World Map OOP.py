@@ -15,6 +15,7 @@ class Weapon(Item):
         super(Weapon, self).__init__(name)
         self.damage = damage
 
+
 class Character(object):
     def __init__(self, name, health, weapon, armor):
         self.name = name
@@ -31,7 +32,6 @@ class Character(object):
     def attack(self, target):
         print("%s attacks %s for %d damage" % (self.name, target.name, self.weapon.damage))
         target.take_damage(self.weapon.damage)
-
 
 
 class Player(object):
