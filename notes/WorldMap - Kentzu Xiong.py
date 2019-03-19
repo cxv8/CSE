@@ -1,7 +1,7 @@
 world_map = {
     'Bedroom': {
         'NAME': "Bedroom",
-        'DESCRIPTION': "You are in your house and getting out of bed."
+        'DESCRIPTION': "You are in your house and got out of bed."
                        "There is a door east of your bed.",
         'PATHS': {
             'EAST': 'Hallway'
@@ -16,7 +16,7 @@ world_map = {
             'WEST': 'Bedroom'
         }
     },
-    'Living room': {
+    'Living Room': {
         "NAME": 'Living room',
         'DESCRIPTION': 'You are in the Living room and nobody is there.'
                        'To the west is the kitchen and toward the south is the door to outside.',
@@ -44,16 +44,16 @@ world_map = {
             'NORTH': 'Living room'
         }
     },
-    'Laboratory': {
+    'Outside Laboratory': {
         'NAME': 'Laboratory',
         'DESCRIPTION': 'You are at the laboratory.'
-                       'There is a broken door toward east.',
+                       'There is a broken door that is open toward east.',
         'PATHS': {
             'EAST': 'Inside laboratory',
             'WEST': 'Outside'
         }
     },
-    'Inside laboratory': {
+    'Inside Laboratory': {
         'NAME': 'Inside Laboratory',
         'DESCRIPTION': 'There are 3 doors'
                        'east lab, north lab, and south lab.',
@@ -65,21 +65,21 @@ world_map = {
         }
 
     },
-    'East lab': {
+    'East Room': {
         'NAME': 'East lab',
         'DESCRIPTION': 'There is a blueprint on a table.',
         'PATHS': {
             'WEST': 'Inside laboratory'
         }
     },
-    'North lab': {
+    'North Room': {
         'NAME': 'North lab',
         'DESCRIPTION': 'There are tools here maybe I could use them to build something later',
         'PATHS': {
             'SOUTH': 'Inside laboratory'
         }
     },
-    'South lab': {
+    'South Room': {
         'NAME': 'South lab',
         'DESCRIPTION': 'There are tables and shelves but it is all empty.'
                        'A tile in the floor looks odd with light coming through.',
@@ -88,12 +88,13 @@ world_map = {
             'NORTH': 'Inside laboratory'
         }
     },
-    'Below laboratory': {
+    'Below South Room': {
         'NAME': 'Below laboratory',
         'DESCRIPTION': 'There are shelves and broken glass everywhere.'
                        'There is a door towards south and north.',
         'PATHS': {
-            'UP': ''
+            'UP': 'South Room'
+            'SOUTH': ''
         }
     }
 }

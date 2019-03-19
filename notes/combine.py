@@ -300,8 +300,6 @@ my_bow.shot(4)
 my_Wbow = WindBow("Wind Bow", "Wind ore")
 my_Wbow.shot(3)
 
-# Character
-
 
 class Character(object):
     def __init__(self, name, health, weapon, armor):
@@ -320,8 +318,6 @@ class Character(object):
         print("%s attacks %s for %d damage" % (self.name, target.name, self.weapon.damage))
         target.take_damage(self.weapon.damage)
 
-# Player
-
 
 class Player(object):
     def __init__(self, starting_location):
@@ -335,3 +331,22 @@ class Player(object):
         :param new_location: The variable containing a room object
         """
         self.current_location = new_location
+
+
+current_node = world_map['']  # ADD IN MAP
+directions = ["NORTH", "SOUTH", "EAST", "WEST", "UP", "DOWN"]
+playing = True
+
+while playing:
+    print(current_node["NAME"])
+    command = input(">_")
+    if command.lower() in ['q', 'quit', 'exit']:
+        playing = False
+    elif command.upper() in directions:
+        try:
+            room_name = current_node['PATHS'][command.upper()]
+            current_node = world_map[room_name]
+        except KeyError:
+            print("I can't go that way.")
+    else:
+        print("Command Not Recognized")
