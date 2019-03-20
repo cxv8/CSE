@@ -1,15 +1,31 @@
 world_map = {
-    'Bedroom': {
-        'NAME': "Bedroom",
-        'DESCRIPTION': "You are in your house and got out of bed."
-                       "There is a door east of your bed.",
+    'Forest': {
+        'NAME': "Forest",
+        'DESCRIPTION': "You are deep in the forest looking for a path out.",
         'PATHS': {
-            'EAST': 'Hallway'
+            'EAST': 'Town',
+            'WEST': 'Forest',
+            'NORTH': 'Forest',
+            'SOUTH': 'Forest'
         }
+    },
+    'Town': {
+        'NAME': "Town",
+        'DESCRIPTION': "The name of the town is half broken the other piece gone." 
+                       "The entire town is run down and nobody in sight."
+                       "There is a house undamaged toward south.",
+        'PATHS': {
+            'SOUTH': "House",
+            'WEST': 'Forest'
+        }
+    },
+    'House': {
+        'NAME': "Undamaged House",
+        'DESCRIPTION': ""
     },
     'Hallway': {
         'NAME': "Hallway",
-        'DESCRIPTION': 'You are in the hallway and all doors locked but yours'
+        'DESCRIPTION': 'You are in the hallway and all doors locked'
                        'Towards south is the living room.',
         'PATHS': {
             'SOUTH': 'Living room',
