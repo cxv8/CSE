@@ -104,13 +104,40 @@ world_map = {
             'NORTH': 'Inside laboratory'
         }
     },
-    'Below South Room': {
-        'NAME': 'Below laboratory',
+    'Underground Room': {
+        'NAME': 'Underground Lab Room',
         'DESCRIPTION': 'There are shelves and broken glass everywhere.'
-                       'There is a door towards south and north.',
+                       'There is a long hallway towards south and a ladder leading back up.',
         'PATHS': {
-            'UP': 'South Room'
-            'SOUTH': ''
+            'UP': 'South Room',
+            'SOUTH': 'Maze'
+        }
+    },
+    'Maze': {
+        'NAME': 'Maze',
+        'DESCRIPTION': 'You are at the start of a Maze',
+        'PATHS': {
+            'NORTH': 'Underground Room',
+            'SOUTH': 'SMaze',
+            'EAST': 'EMaze',
+            'WEST': 'WMaze'
+        }
+    },
+    'SDEAD END': {
+        'NAME': 'Dead End',
+        'DESCRIPTION': 'You are at a dead end.',
+        'PATHS': {
+            'NORTH': 'Maze'
         }
     }
+    'SMaze': {
+        'NAME': 'Maze',
+        'DESCRIPTION': 'You are in the Maze',
+        'PATHS': {
+            'NORTH': 'Maze',
+            'SOUTH': 'DEAD END',
+            'EAST': 'SEMaze',
+            'WEST': 'DEAD END'
+        }
+    },
 }
