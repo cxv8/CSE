@@ -115,7 +115,7 @@ world_map = {
     },
     'Maze': {
         'NAME': 'Maze',
-        'DESCRIPTION': 'You are at the start of a Maze',
+        'DESCRIPTION': 'You are at the start of a Maze.',
         'PATHS': {
             'NORTH': 'Underground Room',
             'SOUTH': 'SMaze',
@@ -123,21 +123,36 @@ world_map = {
             'WEST': 'WMaze'
         }
     },
-    'SDEAD END': {
-        'NAME': 'Dead End',
-        'DESCRIPTION': 'You are at a dead end.',
-        'PATHS': {
-            'NORTH': 'Maze'
-        }
-    }
     'SMaze': {
         'NAME': 'Maze',
-        'DESCRIPTION': 'You are in the Maze',
+        'DESCRIPTION': 'You are in the Maze.',
         'PATHS': {
             'NORTH': 'Maze',
-            'SOUTH': 'DEAD END',
-            'EAST': 'SEMaze',
-            'WEST': 'DEAD END'
+            'EAST': 'SEMaze'
         }
     },
+    'SEMaze': {
+        'NAME': 'Maze',
+        'DESCRIPTION': 'You are in the Maze.',
+        'PATHS': {
+            'WEST': 'SMaze',
+            'NORTH': 'SENMaze',
+            'SOUTH': 'SESMaze'
+        }
+    },
+    'SENMaze': {
+        'NAME': 'Maze',
+        'DESCRIPTION': 'You are in the Maze.',
+        'PATHS': {
+            'North': 'you are in the Maze.',
+            'SOUTH': 'SEMaze'
+        }
+    },
+    'SENNMaze': {
+        'NAME': 'Maze',
+        'DESCRIPTION': 'You are at a dead end head back south.',
+        'PATHS': {
+            'SOUTH': 'SENMaze'
+        }
+    }
 }
