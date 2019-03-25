@@ -5,11 +5,11 @@ class Item(object):
 
 
 class Sword(Item):
-    def __init__(self, name, material, use=True, equip=True):
+    def __init__(self, name, material, dmg, use=True, equip=True):
         super(Sword, self).__init__(name, material)
         self.equip = equip
         self.use = use
-        self.dmg = 20
+        self.dmg = dmg
 
     def hold(self):
         self.equip = True
@@ -28,11 +28,11 @@ class Sword(Item):
 
 
 class FireSword(Sword):
-    def __init__(self, name, material, shoot=True, dmg=35):
+    def __init__(self, name, material, shoot=True):
         super(FireSword, self).__init__(name, material)
         self.shoot = shoot
         self.ammo = 5
-        self.dmg = dmg
+        self.dmg = 35
 
     def fireball(self, shots):
         if self.shoot:

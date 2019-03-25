@@ -1,15 +1,15 @@
 class Item(object):
-    def __init__(self, name, material):
+    def __init__(self, name, material, dmg):
         self.name = name
         self.material = material
+        self.dmg = dmg
 
 
 class Sword(Item):
-    def __init__(self, name, material, use=True, equip=True):
-        super(Sword, self).__init__(name, material)
+    def __init__(self, name, material, dmg, use=True, equip=True):
+        super(Sword, self).__init__(name, material, dmg)
         self.equip = equip
         self.use = use
-        self.dmg = 20
 
     def hold(self):
         self.equip = True

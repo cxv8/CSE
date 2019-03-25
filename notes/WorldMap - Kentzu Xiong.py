@@ -107,9 +107,8 @@ world_map = {
     'Underground Room': {
         'NAME': 'Underground Lab Room',
         'DESCRIPTION': 'There are shelves and broken glass everywhere.'
-                       'There is a long hallway towards south and a ladder leading back up.',
+                       'There is a long hallway towards south but no way back up.',
         'PATHS': {
-            'UP': 'South Room',
             'SOUTH': 'Maze'
         }
     },
@@ -144,15 +143,21 @@ world_map = {
         'NAME': 'Maze',
         'DESCRIPTION': 'You are in the Maze.',
         'PATHS': {
-            'North': 'you are in the Maze.',
-            'SOUTH': 'SEMaze'
+            'North': 'SEMaze',
+            'EAST': 'SENEMaze',
+            'WEST': 'SENWMaze'
         }
     },
-    'SENNMaze': {
+    'SENWMaze': {
         'NAME': 'Maze',
-        'DESCRIPTION': 'You are at a dead end head back south.',
+        'DESCRIPTION': 'You are at a dead end head back east.',
         'PATHS': {
-            'SOUTH': 'SENMaze'
+            'EAST': 'SENMaze'
         }
+    },
+    'SENEMaze': {
+        'NAME': 'Maze',
+        'DESCRIPTION': '',
+        'SOUTH': 'SENWSMaze'
     }
 }
