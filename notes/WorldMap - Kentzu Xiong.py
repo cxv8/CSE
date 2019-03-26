@@ -1,77 +1,60 @@
 world_map = {
     'Forest': {
         'NAME': "Forest",
-        'DESCRIPTION': "You are deep in the forest looking for a path out.",
+        'DESCRIPTION': "You are deep in the forest looking for a path out."
+                       "You are blocked by trees all around you but the east.",
         'PATHS': {
-            'EAST': 'Town',
-            'WEST': 'Forest',
-            'NORTH': 'Forest',
-            'SOUTH': 'Forest'
+            'EAST': 'Town'
         }
     },
     'Town': {
         'NAME': "Town",
         'DESCRIPTION': "The name of the town is half broken the other piece gone." 
                        "The entire town is run down and nobody in sight."
-                       "There is a house undamaged toward south.",
+                       "There is a house undamaged toward south and looking east you see a laboratory not so far away.",
         'PATHS': {
             'SOUTH': "House",
-            'WEST': 'Forest'
+            'WEST': 'Forest',
+            'EAST': 'Laboratory'
         }
     },
     'House': {
-        'NAME': "Undamaged House",
-        'DESCRIPTION': ""
-    },
-    'Hallway': {
-        'NAME': "Hallway",
-        'DESCRIPTION': 'You are in the hallway and all doors locked'
-                       'Towards south is the living room.',
-        'PATHS': {
-            'SOUTH': 'Living room',
-            'WEST': 'Bedroom'
+        'NAME': "Damaged House",
+        'DESCRIPTION': "The house looks abandon.",
+        'PATHS':{
+            'SOUTH': 'Living Room',
+            'NORTH': 'Town'
         }
     },
     'Living Room': {
         "NAME": 'Living room',
-        'DESCRIPTION': 'You are in the Living room and nobody is there.'
+        'DESCRIPTION': 'You are in the living room and nobody is there and there is a card on the ground.'
                        'To the west is the kitchen and toward the south is the door to outside.',
         'PATHS': {
             'WEST': 'Kitchen',
-            'SOUTH': 'Outside',
-            'NORTH': 'Hallway'
+            'NORTH': 'House'
         }
     },
     'Kitchen': {
         'NAME': 'Kitchen',
         'DESCRIPTION': 'You are in the Kitchen.'
-                       'There are freshly made food sitting on the stove.',
+                       'The place is empty.',
         'PATHS': {
-            'EAST': 'Living room'
+            'EAST': 'Living room',
         }
     },
-    'Outside': {
-        'NAME': 'Outside the house',
-        'DESCRIPTION': 'You are outside your house but nobody in sight.'
-                       "You see your parents car but it's locked."
-                       "Towards the east is your parents laboratory and it is not so far.",
-        'PATHS': {
-            'EAST': 'Laboratory',
-            'NORTH': 'Living room'
-        }
-    },
-    'Outside Laboratory': {
+    'Laboratory': {
         'NAME': 'Laboratory',
         'DESCRIPTION': 'You are at the laboratory.'
-                       'There is a broken door that is open toward east.',
+                       'The doors are locked.',
         'PATHS': {
             'EAST': 'Inside laboratory',
-            'WEST': 'Outside'
+            'WEST': 'Town'
         }
     },
     'Inside Laboratory': {
         'NAME': 'Inside Laboratory',
-        'DESCRIPTION': 'There are 3 doors'
+        'DESCRIPTION': 'There are 3 doors labeled'
                        'east lab, north lab, and south lab.',
         'PATHS': {
             'EAST': 'East lab',
@@ -81,26 +64,26 @@ world_map = {
         }
 
     },
-    'East Room': {
-        'NAME': 'East lab',
+    'East Lab': {
+        'NAME': 'East Lab',
         'DESCRIPTION': 'There is a blueprint on a table.',
         'PATHS': {
             'WEST': 'Inside laboratory'
         }
     },
-    'North Room': {
-        'NAME': 'North lab',
+    'North Lab': {
+        'NAME': 'North Lab',
         'DESCRIPTION': 'There are tools here maybe I could use them to build something later',
         'PATHS': {
             'SOUTH': 'Inside laboratory'
         }
     },
-    'South Room': {
-        'NAME': 'South lab',
+    'South Lab': {
+        'NAME': 'South Lab',
         'DESCRIPTION': 'There are tables and shelves but it is all empty.'
                        'A tile in the floor looks odd with light coming through.',
         'PATHS': {
-            'DOWN': 'Below laboratory',
+            'DOWN': 'Underground laboratory',
             'NORTH': 'Inside laboratory'
         }
     },
@@ -143,21 +126,14 @@ world_map = {
         'NAME': 'Maze',
         'DESCRIPTION': 'You are in the Maze.',
         'PATHS': {
-            'North': 'SEMaze',
+            'North': 'EMaze',
             'EAST': 'SENEMaze',
-            'WEST': 'SENWMaze'
-        }
-    },
-    'SENWMaze': {
-        'NAME': 'Maze',
-        'DESCRIPTION': 'You are at a dead end head back east.',
-        'PATHS': {
-            'EAST': 'SENMaze'
+            'South': 'SEMaze'
         }
     },
     'SENEMaze': {
         'NAME': 'Maze',
-        'DESCRIPTION': '',
-        'SOUTH': 'SENWSMaze'
+        'DESCRIPTION': 'You see the exit of the maze toward south.',
+        'SOUTH': 'Exit'
     }
 }
