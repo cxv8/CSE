@@ -5,11 +5,10 @@ class Item(object):
 
 
 class Sword(Item):
-    def __init__(self, name, material, dmg, use=True, equip=True):
+    def __init__(self, name, material, use=True, equip=True):
         super(Sword, self).__init__(name, material)
         self.equip = equip
         self.use = use
-        self.dmg = dmg
 
     def hold(self):
         self.equip = True
@@ -191,7 +190,7 @@ class WindBow(Item):
             elif self.arrow < shots:
                 print("You shot %s wind arrow and ran out." % self.arrow)
             else:
-                print("You shoot %s wind arrow(s) knocking them your target back." % shots)
+                print("You shoot %s wind arrow(s) knocking your target back." % shots)
                 self.arrow -= shots
         else:
             print("You can't shoot.")
@@ -255,13 +254,44 @@ class MegaPotion(Item):
             print("You restored 50 stamina and health")
 
 
+class SpaceParts(Item):
+    def __init__(self, number, combination):
+        super(SpaceParts, self).__init__(number, combination)
+        self.number = number
+        self.combination = combination
+
+
+class SpacePart1(SpaceParts):
+    def __init__(self, number, combination):
+        super(SpacePart1, self).__init__('1', '2')
+        self.number = number
+        self.combination = combination
+
+
+class SpacePart2(SpaceParts):
+    def __init__(self, number, combination):
+        super(SpacePart2, self).__init__('2', '3')
+        self.number = number
+        self.combination = combination
+
+
+class SpacePart3(SpaceParts):
+    def __init__(self, number, combination):
+        super(SpacePart3, self).__init__('3', '1')
+        self.number = number
+        self.combination = combination
+
+
+class
+
+
 my_sword = Sword("Starter sword", "Metal")
 my_sword.swing()
 
 my_Fsword = FireSword("Fire Sword", "Flame Ore")
 my_Fsword.fireball(3)
 
-my_Lsword = LightningSword("Linghtning Sword", "Lightning Ore")
+my_Lsword = LightningSword("Lightning Sword", "Lightning Ore")
 my_Lsword.lightning(5)
 
 my_Wsword = WaterSword("Water Sword", "Water Ore")
@@ -299,3 +329,7 @@ my_bow.shot(4)
 
 my_Wbow = WindBow("Wind Bow", "Wind ore")
 my_Wbow.shot(3)
+
+_SpacePart = SpacePart1('1', '2')
+print(_SpacePart.combination)
+
