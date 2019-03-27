@@ -73,7 +73,7 @@ world_map = {
     },
     'North Lab': {
         'NAME': 'North Lab',
-        'DESCRIPTION': 'There are tools here maybe I could use them to build something later',
+        'DESCRIPTION': 'There are tools here maybe I could use them to build something.',
         'PATHS': {
             'SOUTH': 'Inside laboratory'
         }
@@ -134,6 +134,12 @@ world_map = {
     'SENEMaze': {
         'NAME': 'Maze',
         'DESCRIPTION': 'You see the exit of the maze toward south.',
-        'SOUTH': 'Exit'
+        'PATHS': {
+            'SOUTH': 'Exit',
+            'WEST': 'SENMaze'
+        }
+    },
+    'Classified': {
+        
     }
 }

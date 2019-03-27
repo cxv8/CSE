@@ -254,9 +254,8 @@ class MegaPotion(Item):
             print("You restored 50 stamina and health")
 
 
-class SpaceParts(Item):
+class SpaceParts(object):
     def __init__(self, number, combination):
-        super(SpaceParts, self).__init__(number, combination)
         self.number = number
         self.combination = combination
 
@@ -282,7 +281,21 @@ class SpacePart3(SpaceParts):
         self.combination = combination
 
 
-class
+class KeyCard(object):
+    def __init__(self, name, room):
+        self.name = name
+        self.room = room
+
+
+class LabCard(KeyCard):
+    def __init__(self, name, room, room1):
+        super(LabCard, self).__init__(name, room)
+        self.room1 = room1
+        self.name = name
+        self.room = room
+
+    def open(self):
+
 
 
 my_sword = Sword("Starter sword", "Metal")
@@ -333,3 +346,5 @@ my_Wbow.shot(3)
 _SpacePart = SpacePart1('1', '2')
 print(_SpacePart.combination)
 
+Card = LabCard('Lab Key Card', 'South Lab', 'North Lab')
+Card.
