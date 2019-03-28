@@ -139,7 +139,21 @@ world_map = {
             'WEST': 'SENMaze'
         }
     },
-    'Classified': {
-        
+    'Exit Maze': {
+        'NAME': 'Exit to Maze',
+        'DESCRIPTION': 'There is an open door toward south.',
+        'PATHS': {
+            'SOUTH': 'Classified Room',
+            'NORTH': 'SENEMaze'
+        }
+    },
+    'Classified Room': {
+        'NAME': 'Classified Room',
+        'DESCRIPTION': 'There are books and folders all over the floor and some on the shelves.'
+                       'There is a folder on a table with another key card next to it.'
+                       'There is also something strange about this room.',
+        'PATHS': {
+            'NORTH': 'Exit Maze'
+        }
     }
 }
