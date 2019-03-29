@@ -1,3 +1,4 @@
+
 world_map = {
     'Forest': {
         'NAME': "Forest",
@@ -153,7 +154,11 @@ world_map = {
                        'There is a folder on a table with another key card next to it.'
                        'There is also something strange about this room.',
         'PATHS': {
-            'NORTH': 'Exit Maze'
+            'NORTH': 'Exit Maze',
+            'EAST': 'Secret Passage' #Print what happened
         }
+    },
+    '': {
+        'NAME': ''
     }
 }

@@ -286,6 +286,9 @@ class KeyCard(object):
         self.name = name
         self.room = room
 
+    def use(self):
+        'Laboratory' = open
+
 
 class LabCard(KeyCard):
     def __init__(self, name, room, room1):
@@ -295,7 +298,7 @@ class LabCard(KeyCard):
         self.room = room
 
     def open(self):
-
+        if room
 
 
 my_sword = Sword("Starter sword", "Metal")
