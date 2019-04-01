@@ -39,7 +39,7 @@ world_map = {
     'Kitchen': {
         'NAME': 'Kitchen',
         'DESCRIPTION': 'You are in the Kitchen.'
-                       'The place is empty.',
+                       'This place is empty.',
         'PATHS': {
             'EAST': 'Living room',
         }
@@ -155,10 +155,11 @@ world_map = {
                        'There is also something strange about this room.',
         'PATHS': {
             'NORTH': 'Exit Maze',
-            'EAST': 'Secret Passage' #Print what happened
+            'EAST': 'Tunnel' #Print what happened
         }
     },
-    '': {
-        'NAME': ''
+    'Tunnel': {
+        'NAME': 'Tunnel',
+        'DESCRIPTION': ''
     }
 }
