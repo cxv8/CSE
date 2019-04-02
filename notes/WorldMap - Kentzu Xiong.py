@@ -10,13 +10,15 @@ world_map = {
     },
     'Town': {
         'NAME': "Town",
-        'DESCRIPTION': "The name of the town is half broken the other piece gone." 
-                       "The entire town is run down and nobody in sight."
-                       "There is a house undamaged toward south and looking east you see a laboratory not so far away.",
+        'DESCRIPTION': "The name of the town is unknown." 
+                       "The entire town is almost destroyed and nobody in sight."
+                       "There is a house not so damaged toward south"
+                       "looking east you see a laboratory not so far away.",
         'PATHS': {
             'SOUTH': "House",
             'WEST': 'Forest',
-            'EAST': 'Laboratory'
+            'EAST': 'Laboratory',
+            'NORTH': 
         }
     },
     'House': {
@@ -39,7 +41,7 @@ world_map = {
     'Kitchen': {
         'NAME': 'Kitchen',
         'DESCRIPTION': 'You are in the Kitchen.'
-                       'This place is empty.',
+                       'This place is empty.', # ADD METAL BOX
         'PATHS': {
             'EAST': 'Living room',
         }
@@ -160,6 +162,21 @@ world_map = {
     },
     'Tunnel': {
         'NAME': 'Tunnel',
-        'DESCRIPTION': ''
+        'DESCRIPTION': 'There is a path going up south and another going straight north',
+        'PATHS': {
+            'NORTH': 'Wall',
+            'SOUTH': 'Town'
+        }
+    },
+    'Wall': {
+        'NAME': 'Wall',
+        'DESCRIPTION': 'A riddle.'
+                       'At a place unknown'
+                       'with pieces apart '
+                       'head north'
+                       'is where you will find this one part',
+        'PATHS': {
+            'SOUTH': 'Tunnel'
+        }
     }
 }
