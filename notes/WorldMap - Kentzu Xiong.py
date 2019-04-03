@@ -13,12 +13,20 @@ world_map = {
         'DESCRIPTION': "The name of the town is unknown." 
                        "The entire town is almost destroyed and nobody in sight."
                        "There is a house not so damaged toward south"
+                       "toward north is a park"
                        "looking east you see a laboratory not so far away.",
         'PATHS': {
-            'SOUTH': "House",
+            'SOUTH': 'House',
             'WEST': 'Forest',
             'EAST': 'Laboratory',
-            'NORTH': 
+            'NORTH': 'Park'
+        }
+    },
+    'Park': {
+        'NAME': 'Park',
+        'DESCRIPTION': "There is nothing here but one tree left.",
+        'PATHS': {
+            'SOUTH': 'Town'
         }
     },
     'House': {
@@ -58,7 +66,8 @@ world_map = {
     'Inside Laboratory': {
         'NAME': 'Inside Laboratory',
         'DESCRIPTION': 'There are 3 doors labeled'
-                       'east lab, north lab, and south lab.',
+                       'east lab, north lab, and south lab.'
+                       'At a corner are a lot of parts',
         'PATHS': {
             'EAST': 'East lab',
             'NORTH': 'North lab',
@@ -174,6 +183,7 @@ world_map = {
                        'At a place unknown'
                        'with pieces apart '
                        'head north'
+                       'under the dirt'
                        'is where you will find this one part',
         'PATHS': {
             'SOUTH': 'Tunnel'

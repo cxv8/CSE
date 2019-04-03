@@ -282,23 +282,23 @@ class SpacePart3(SpaceParts):
 
 
 class KeyCard(object):
-    def __init__(self, name, room):
+    def __init__(self, name, rooms):
         self.name = name
-        self.room = room
+        self.rooms = room
 
     def use(self):
         'Laboratory' = open
 
 
 class LabCard(KeyCard):
-    def __init__(self, name, room, room1):
+    def __init__(self, name, room):
         super(LabCard, self).__init__(name, room)
-        self.room1 = room1
         self.name = name
-        self.room = room
+        self.room = 'Classified'
+        self.room1 = 'Laboratory'
 
     def open(self):
-        if room
+        if self.room.
 
 
 my_sword = Sword("Starter sword", "Metal")
