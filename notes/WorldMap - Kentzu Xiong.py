@@ -109,7 +109,8 @@ world_map = {
     },
     'Maze': {
         'NAME': 'Maze',
-        'DESCRIPTION': 'You are at the start of a Maze.',
+        'DESCRIPTION': 'You are at the start of a Maze.'
+                       'Go south, east, or west.',
         'PATHS': {
             'NORTH': 'Underground Room',
             'SOUTH': 'SMaze',
@@ -119,7 +120,8 @@ world_map = {
     },
     'SMaze': {
         'NAME': 'Maze',
-        'DESCRIPTION': 'You are in the Maze.',
+        'DESCRIPTION': 'You are in the Maze.'
+                       'Go east', #ADD HERE
         'PATHS': {
             'NORTH': 'Maze',
             'EAST': 'SEMaze'
@@ -127,7 +129,8 @@ world_map = {
     },
     'SEMaze': {
         'NAME': 'Maze',
-        'DESCRIPTION': 'You are in the Maze.',
+        'DESCRIPTION': 'You are in the Maze.'
+                       'Go west, north, south.',
         'PATHS': {
             'WEST': 'SMaze',
             'NORTH': 'SENMaze',
@@ -136,7 +139,8 @@ world_map = {
     },
     'SENMaze': {
         'NAME': 'Maze',
-        'DESCRIPTION': 'You are in the Maze.',
+        'DESCRIPTION': 'You are in the Maze.'
+                       'Go north, east, south.',
         'PATHS': {
             'North': 'EMaze',
             'EAST': 'SENEMaze',
@@ -147,11 +151,11 @@ world_map = {
         'NAME': 'Maze',
         'DESCRIPTION': 'You see the exit of the maze toward south.',
         'PATHS': {
-            'SOUTH': 'Exit',
+            'SOUTH': 'Cave',
             'WEST': 'SENMaze'
         }
     },
-    'Exit Maze': {
+    'Cave': {
         'NAME': 'Exit to Maze',
         'DESCRIPTION': 'There is an open door toward south.',
         'PATHS': {
@@ -165,7 +169,7 @@ world_map = {
                        'There is a folder on a table with another key card next to it.'
                        'There is also something strange about this room.',
         'PATHS': {
-            'NORTH': 'Exit Maze',
+            'NORTH': 'Cave',
             'EAST': 'Tunnel' #Print what happened
         }
     },
