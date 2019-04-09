@@ -6,9 +6,11 @@ class Room(object):
         self.east = east
         self.description = description
 
+
 class Item(object):
     def __init__(self, name):
         self.name = name
+
 
 class Weapon(Item):
     def __init__(self, name, damage):

@@ -281,24 +281,7 @@ class SpacePart3(SpaceParts):
         self.combination = combination
 
 
-class KeyCard(object):
-    def __init__(self, name, rooms):
-        self.name = name
-        self.rooms = room
 
-    def use(self):
-        'Laboratory' = open
-
-
-class LabCard(KeyCard):
-    def __init__(self, name, room):
-        super(LabCard, self).__init__(name, room)
-        self.name = name
-        self.room = 'Classified'
-        self.room1 = 'Laboratory'
-
-    def open(self):
-        if self.room.
 
 
 my_sword = Sword("Starter sword", "Metal")

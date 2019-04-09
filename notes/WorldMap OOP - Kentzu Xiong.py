@@ -1,5 +1,5 @@
 class Room(object):
-    def __init__(self, name, north=None, south=None, east=None, west=None, down=None, up=None, description=""):
+    def __init__(self, name, north=None, south=None, east=None, west=None, down=None, up=None):
         self.name = name
         self.north = north
         self.south = south
@@ -7,7 +7,7 @@ class Room(object):
         self.west = west
         self.down = down
         self.up = up
-        self.description = description
+        self.items = []
 
 
 Forest = Room('Forest', None, None, 'Town', None, None, None)
