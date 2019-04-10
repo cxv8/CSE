@@ -280,6 +280,10 @@ class SpacePart3(SpaceParts):
         self.number = number
         self.combination = combination
 
+class KeyCard(object):
+    def __init__(self, name):
+        self.name = name
+
 
 
 
@@ -331,6 +335,3 @@ my_Wbow.shot(3)
 
 _SpacePart = SpacePart1('1', '2')
 print(_SpacePart.combination)
-
-Card = LabCard('Lab Key Card', 'South Lab', 'North Lab')
-Card.

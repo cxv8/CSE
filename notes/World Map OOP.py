@@ -43,6 +43,7 @@ class Player(object):
         self.inventory = []
         self.damage = 10
 
+
     def move(self, new_location):
         """This method moves a character to a new location
         :param new_location: The variable containing a room object

@@ -29,7 +29,7 @@ world_map = {
             'SOUTH': 'Town'
         }
     },
-    'Front Yard': {
+    'Front_Yard': {
         'NAME': "Front Yard",
         'DESCRIPTION': "The house looks abandon.",
         'PATHS':{
@@ -56,8 +56,8 @@ world_map = {
     },
     'Laboratory': {
         'NAME': 'Laboratory',
-        'DESCRIPTION': 'You are at the laboratory.'
-                       'The doors are locked.',
+        'DESCRIPTION': 'You are at the laboratory.' #FIX DOORS
+                       'The doors are broken.',
         'PATHS': {
             'EAST': 'Inside laboratory',
             'WEST': 'Town'
