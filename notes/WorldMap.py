@@ -262,8 +262,8 @@ Laboratory = Room('Laboratory', None, None, 'Inside_Laboratory', 'Town', None, N
                   'The doors are locked.'
                   )
 Inside_Laboratory = Room('Inside Laboratory', 'North Lab', 'South Lab', 'East Lab', 'Laboratory', None, None,
-                         'There are 3 doors labeled'
-                         'east lab, north lab, and south lab.'
+                         'There are 3 doors named'
+                         ' east lab, north lab, and south lab.'
                          'At a corner are a lot of parts'
                          )
 East_Lab = Room('East Lab', None, None, None, 'Inside_Laboratory', None, None,
@@ -322,9 +322,14 @@ directions = ['north', 'south', 'east', 'west', 'up', 'down']
 short_directions = ['n', 's', 'e', 'w', 'u', 'd']
 
 while playing:
+    turn = 50
     print(player.current_location.name)
     print(player.current_location.description)
+    print(player.current_location.items)
     command = input(">_")
+    for Player.move in :
+        turn -= 1
+        print(turn)
     if command.lower() in ['q', 'quit', 'exit']:
         playing = False
     elif command.lower() in directions:
@@ -340,6 +345,9 @@ while playing:
     else:
         print("Command Not Recognized")
 
-    if command.lower() in "take":
+    if command.lower() in "take ":
         items = command[5:]
+        items_ob = None
+        if items_ob = None:
+            Player.inventory.append(items)
 
