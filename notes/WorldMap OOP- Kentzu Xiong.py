@@ -225,13 +225,10 @@ class Player(object):
         self.inventory = []
 
     def move(self, new_location):
-        """This method moves a character to a new location
-        :param new_location: The variable containing a room object
-        """
         self.current_location = new_location
 
-    def take(self, command):
-        self.inventory.append(command)
+    def take(self):
+        self.inventory.append(items)
 
 
 Forest = Room('Forest', None, None, 'Town', None, None, None,
@@ -322,14 +319,13 @@ directions = ['north', 'south', 'east', 'west', 'up', 'down']
 short_directions = ['n', 's', 'e', 'w', 'u', 'd']
 
 while playing:
-    turn = 50
     print(player.current_location.name)
     print(player.current_location.description)
     print(player.current_location.items)
     command = input(">_")
-    for Player.move in :
-        turn -= 1
-        print(turn)
+    if command.lower() in short_directions:
+        pos = short_directions.index(directions)
+        directions = pos
     if command.lower() in ['q', 'quit', 'exit']:
         playing = False
     elif command.lower() in directions:
@@ -348,6 +344,7 @@ while playing:
     if command.lower() in "take ":
         items = command[5:]
         items_ob = None
-        if items_ob = None:
-            Player.inventory.append(items)
+        if items_ob in None:
+            player.take()
+            print("%s was added to your inventory." % items)
 

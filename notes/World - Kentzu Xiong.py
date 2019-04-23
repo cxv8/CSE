@@ -183,7 +183,7 @@ world_map = {
     },
     'Wall': {
         'NAME': 'Wall',
-        'DESCRIPTION': 'A riddle.'
+        'DESCRIPTION': 'You reach an end and on a wall reads:\n'
                        'At a place unknown'
                        'with pieces apart '
                        'head north'
