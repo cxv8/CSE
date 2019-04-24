@@ -321,11 +321,11 @@ short_directions = ['n', 's', 'e', 'w', 'u', 'd']
 while playing:
     print(player.current_location.name)
     print(player.current_location.description)
-    print(player.current_location.items)
+    print("Items:\n"player.current_location.items)
     command = input(">_")
     if command.lower() in short_directions:
-        pos = short_directions.index(directions)
-        directions = pos
+        pos = short_directions.index(command.lower())
+        command = directions[pos]
     if command.lower() in ['q', 'quit', 'exit']:
         playing = False
     elif command.lower() in directions:
@@ -342,9 +342,5 @@ while playing:
         print("Command Not Recognized")
 
     if command.lower() in "take ":
-        items = command[5:]
-        items_ob = None
-        if items_ob in None:
-            player.take()
-            print("%s was added to your inventory." % items)
+
 
