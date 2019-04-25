@@ -68,9 +68,9 @@ world_map = {
                        'east lab, north lab, and south lab.'
                        'At a corner are a lot of parts',
         'PATHS': {
-            'EAST': 'East lab',
-            'NORTH': 'North lab',
-            'SOUTH': 'South lab',
+            'EAST': 'East Lab',
+            'NORTH': 'North Lab',
+            'SOUTH': 'South Lab',
             'WEST': 'Laboratory'
         }
 
@@ -227,9 +227,6 @@ class Player(object):
     def move(self, new_location):
         self.current_location = new_location
 
-    def take(self):
-        self.inventory.append(items)
-
 
 Forest = Room('Forest', None, None, 'Town', None, None, None,
               "You are deep in the forest looking for a path out."
@@ -258,7 +255,7 @@ Laboratory = Room('Laboratory', None, None, 'Inside_Laboratory', 'Town', None, N
                   'You are at the laboratory.'
                   'The doors are locked.'
                   )
-Inside_Laboratory = Room('Inside Laboratory', 'North Lab', 'South Lab', 'East Lab', 'Laboratory', None, None,
+Inside_Laboratory = Room('Inside Laboratory', 'North_Lab', 'South_Lab', 'East_Lab', 'Laboratory', None, None,
                          'There are 3 doors named'
                          ' east lab, north lab, and south lab.'
                          'At a corner are a lot of parts'
@@ -311,7 +308,6 @@ Wall = Room('Wall', None, 'Tunnel', None, None, None, None,
             'is where you will find this one part'
             )
 
-
 player = Player(Forest)
 
 playing = True
@@ -321,7 +317,8 @@ short_directions = ['n', 's', 'e', 'w', 'u', 'd']
 while playing:
     print(player.current_location.name)
     print(player.current_location.description)
-    print("Items:\n"player.current_location.items)
+    if player.current_location.items == True:
+        print("Items:\n " + player.current_location.items)
     command = input(">_")
     if command.lower() in short_directions:
         pos = short_directions.index(command.lower())
@@ -340,7 +337,3 @@ while playing:
             print("This key does not exist.")
     else:
         print("Command Not Recognized")
-
-    if command.lower() in "take ":
-
-
