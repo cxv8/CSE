@@ -1,15 +1,17 @@
 import csv
 
 
-def last_num(num: str):
-    num.pop()
+def validate(num: str):
+    if len(num) == 16:
+        list_num = list(num)
+        list_num.pop(15)
+        print(''.join(list_num))
+        return False
 
 
-def validate (num: str):
-    if :
-        return True
-    return False
-
+def reverse(num: str):
+    print(num)
+    return num[::-1]
 
 
 with open("Book1.csv", 'r') as old_csv:

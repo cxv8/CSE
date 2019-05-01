@@ -22,20 +22,16 @@ def validate(num: str):
 
 
 def reverse(num: str):
-    print(num[::-1])
+    print(num)
+    return num[::-1]
 
 
-reverse('1283338355865070')
+# def valid1(num: str):
+#     reversed_version = reverse(num)
+#     print(num[::-1])
+#
+#     for i in reversed_version:
 
-
-def check(num: str):
-    if len(num) == 16:
-        print("Valid")
-    else:
-        print("Not Valid")
-
-
-check('1283338355865070')
 
 # with open("Book1.csv", 'r') as old_csv:
 #     reader = csv.reader(old_csv)
@@ -44,14 +40,14 @@ check('1283338355865070')
 #         print(old_number)  # old_number + '1'
 
 
-with open("Book1.csv", 'r') as old_csv:
-    with open("MyNewFile.csv", 'w', newline='') as new_csv:
-        reader = csv.reader(old_csv)
-        writer = csv.writer(new_csv)
-        print("Processing...")
-
-        for row in reader:
-            old_number = row[0]  # String
-            if validate(old_number):
-                writer.writerow(row)
-        print("OK")
+# with open("Book1.csv", 'r') as old_csv:
+#     with open("MyNewFile.csv", 'w', newline='') as new_csv:
+#         reader = csv.reader(old_csv)
+#         writer = csv.writer(new_csv)
+#         print("Processing...")
+#
+#         for row in reader:
+#             old_number = row[0]  # String
+#             if validate(old_number):
+#                 writer.writerow(row)
+#         print("OK")
