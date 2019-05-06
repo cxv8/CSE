@@ -12,7 +12,7 @@ def validate(num: str):
             if index % 2 == 1:
                 multi = index*2
                 if multi > 9:
-                
+
 
         return False
 
