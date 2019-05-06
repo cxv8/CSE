@@ -6,8 +6,14 @@ def validate(num: str):
         list_num = list(num)
         list_num.pop(15)
         list_num.reverse()
-        last_digit = 0
-        list_num
+        last_digit = list_num[15]
+        odd_num = list_num[0:16:2]
+        for index in range(len(list_num)):
+            if index % 2 == 1:
+                multi = index*2
+                if multi > 9:
+                
+
         return False
 
 
