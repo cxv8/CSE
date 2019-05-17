@@ -30,5 +30,5 @@ SENEMaze = Room('Maze', None, 'Cave', None, 'SENMaze', None, None)
 Cave = Room('Cave', 'SENEMaze', 'Classified Room', None, None, None, None)
 Classified_Room = Room('Classified Room', 'Cave', None, 'Tunnel', None, None, None)
 Tunnel = Room('Tunnel', 'Wall', 'Town', None, None, None, None)
-Wall = Room('Wall', None, Tunnel, None, None, None, None)
+Wall = Room('Wall', None, 'Tunnel', None, None, None, None)
 

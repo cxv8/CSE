@@ -230,7 +230,7 @@ class Player(object):
 
 Forest = Room('Forest', None, None, 'Town', None, None, None,
               "You are deep in the forest looking for a path out."
-              " You are blocked by trees all around you but the east.", [KeyCard]
+              " You are blocked by trees all around you but the east."
               )
 Town = Room('Town', 'Park', 'Front_Yard', 'Laboratory', 'Forest', None, None,
             "The name of the town is unknown."
@@ -248,9 +248,7 @@ Living_Room = Room('Living Room', 'Front_Yard', None, None, 'Kitchen', None, Non
                    ' To the west is the kitchen and toward the south is the door to outside.', [KeyCard]
                    )
 Kitchen = Room('Kitchen', None, None, 'Living_Room', None, None, None,
-               'You are in the Kitchen.'
-               ' This place is empty.'
-               )
+               'You enter the Kitchen. There is a small box on the stove.')
 Laboratory = Room('Laboratory', None, None, 'Inside_Laboratory', 'Town', None, None,
                   'You are at the laboratory.'
                   'The doors are locked.'
@@ -291,7 +289,7 @@ SENMaze = Room('Maze', 'EMaze', 'SEMaze', 'SENEMaze', None, None, None,
 SENEMaze = Room('Maze', None, 'Cave', None, 'SENMaze', None, None,
                 'You see the exit of the maze toward south.')
 Cave = Room('Cave', 'SENEMaze', 'Classified_Room', None, None, None, None,
-            'There is an open door toward south.')
+            'There is an broken down door with scratoward south.')
 Classified_Room = Room('Classified_Room', 'Cave', None, 'Tunnel', None, None, None,
                        'There are books and folders all over the floor and some on the shelves.'
                        'There is a folder on a table with another key card next to it.\n'
@@ -336,3 +334,16 @@ while playing:
             print("This key does not exist.")
     else:
         print("Command Not Recognized")
+    if "take" in command:
+        item_name = command[5:]
+        item_object = None
+
+        for item in player.current_location.items:
+            if item.name == item_name:
+                item_object = item
+
+        if item_object is not None:
+            player.inventory.append(item_object)
+            player.current_location.items.remove(item_object)
+            print("The %s was added to your inventory." % item_object)
+
