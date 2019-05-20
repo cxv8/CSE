@@ -182,7 +182,7 @@ world_map = {
     },
     'Wall': {
         'NAME': 'Wall',
-        'DESCRIPTION': 'A riddle.'
+        'DESCRIPTION': 'There is a riddle inscribed into the wall.'
                        'At a place unknown'
                        'with pieces apart '
                        'head north'
@@ -220,9 +220,10 @@ class MasterCard(object):
 
 
 class Player(object):
-    def __init__(self, starting_location):
+    def __init__(self, starting_location, pick_up):
         self.current_location = starting_location
         self.inventory = []
+        self.pick_up = pick_up
 
     def move(self, new_location):
         self.current_location = new_location
@@ -245,7 +246,7 @@ Front_Yard = Room('Front Yard', 'Town', 'Living_Room', None, None, None, None, "
 Living_Room = Room('Living Room', 'Front_Yard', None, None, 'Kitchen', None, None,
                    'You are in the living room and '
                    'nobody is there and there is a card on the ground.'
-                   ' To the west is the kitchen and toward the south is the door to outside.', [KeyCard]
+                   ' To the west is the kitchen and toward the south is the door to outside.', [KeyCard("keycard")]
                    )
 Kitchen = Room('Kitchen', None, None, 'Living_Room', None, None, None,
                'You enter the Kitchen. There is a small box on the stove.')
@@ -289,7 +290,7 @@ SENMaze = Room('Maze', 'EMaze', 'SEMaze', 'SENEMaze', None, None, None,
 SENEMaze = Room('Maze', None, 'Cave', None, 'SENMaze', None, None,
                 'You see the exit of the maze toward south.')
 Cave = Room('Cave', 'SENEMaze', 'Classified_Room', None, None, None, None,
-            'There is an broken down door with scratoward south.')
+            'There is an broken down door with scratch marks on it toward south.')
 Classified_Room = Room('Classified_Room', 'Cave', None, 'Tunnel', None, None, None,
                        'There are books and folders all over the floor and some on the shelves.'
                        'There is a folder on a table with another key card next to it.\n'
@@ -299,14 +300,13 @@ Tunnel = Room('Tunnel', 'Wall', 'Town', None, None, None, None,
               'There is a path going up south and another going straight north')
 Wall = Room('Wall', None, 'Tunnel', None, None, None, None,
             'you reach an end looking at the wall it reads\n'
-            'At a place unknown'
-            'with pieces apart '
-            'head north'
-            'under the dirt'
+            'At a place unknown\n'
+            'with pieces apart\n'
+            'head north\n'
+            'under the dirt\n'
             'is where you will find this one part'
             )
-
-player = Player(Forest)
+player = Player(Forest, pick_up=True)
 
 playing = True
 directions = ['north', 'south', 'east', 'west', 'up', 'down']
@@ -315,7 +315,6 @@ short_directions = ['n', 's', 'e', 'w', 'u', 'd']
 while playing:
     print(player.current_location.name)
     print(player.current_location.description)
-
     command = input(">_")
     if command.lower() in short_directions:
         pos = short_directions.index(command.lower())
@@ -332,9 +331,8 @@ while playing:
             print("I can't go that way.")
         except AttributeError:
             print("This key does not exist.")
-    else:
-        print("Command Not Recognized")
-    if "take" in command:
+
+    elif "take ".lower() in command:
         item_name = command[5:]
         item_object = None
 
@@ -345,5 +343,26 @@ while playing:
         if item_object is not None:
             player.inventory.append(item_object)
             player.current_location.items.remove(item_object)
-            print("The %s was added to your inventory." % item_object)
+            print("You took the " + item_object.name)
 
+    elif "pick up ".lower() in command:
+        item_name = command[8:]
+        item_object = None
+
+        for item in player.current_location.items:
+            if item.name == item_name:
+                item_object = item
+
+        if item_object is not None:
+            player.inventory.append(item_object)
+            player.current_location.items.remove(item_object)
+            print("You took the " + item_object.name)
+    elif "help" in command:
+        print("To move you type:\n'north','south','west','east','up','down' or 'n','s','w','e','u','d'.\n============="
+              "============================================================================================\n"
+              "To pick up an item in your location you type:\n"
+              "'pick up' or 'take'.\n================================================================================="
+              "========================\nTo exit the game you type:\n'q','quit', or 'exit'.\n=========================="
+              "==============================================================================")
+    else:
+        print("Command Not Recognized")
