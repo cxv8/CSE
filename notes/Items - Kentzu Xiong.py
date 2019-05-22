@@ -262,21 +262,21 @@ class SpaceParts(object):
 
 class SpacePart1(SpaceParts):
     def __init__(self, number, combination):
-        super(SpacePart1, self).__init__('1', '2')
+        super(SpacePart1, self).__init__(1, 2)
         self.number = number
         self.combination = combination
 
 
 class SpacePart2(SpaceParts):
     def __init__(self, number, combination):
-        super(SpacePart2, self).__init__('2', '3')
+        super(SpacePart2, self).__init__(2, 3)
         self.number = number
         self.combination = combination
 
 
 class SpacePart3(SpaceParts):
     def __init__(self, number, combination):
-        super(SpacePart3, self).__init__('3', '1')
+        super(SpacePart3, self).__init__(3, 1)
         self.number = number
         self.combination = combination
 
