@@ -1,3 +1,6 @@
+Turn = 100
+
+
 class LockExecption(Exception):
     pass
 
@@ -48,18 +51,9 @@ world_map = {
     'Living Room': {
         "NAME": 'Living room',
         'DESCRIPTION': 'You are in the living room and nobody is there and there is a keycard on the ground.'
-                       'To the west is the kitchen and toward the south is the door to outside.',
+                       'Toward the south is the door to outside.',
         'PATHS': {
-            'WEST': 'Kitchen',
             'NORTH': 'Front Yard'
-        }
-    },
-    'Kitchen': {
-        'NAME': 'Kitchen',
-        'DESCRIPTION': 'You go to the Kitchen '
-                       'and there is a box on a counter .',
-        'PATHS': {
-            'EAST': 'Living room',
         }
     },
     'Laboratory': {
@@ -73,12 +67,11 @@ world_map = {
     },
     'Inside Laboratory': {
         'NAME': 'Inside Laboratory',
-        'DESCRIPTION': 'There are 3 doors labeled'
-                       'east lab, north lab, and south lab.'
+        'DESCRIPTION': 'There are 2 doors labeled'
+                       'east lab, and south lab.'
                        'At a corner are a lot of parts',
         'PATHS': {
             'EAST': 'East Lab',
-            'NORTH': 'North Lab',
             'SOUTH': 'South Lab',
             'WEST': 'Laboratory'
         }
@@ -89,13 +82,6 @@ world_map = {
         'DESCRIPTION': 'There is a blueprint on a table.',
         'PATHS': {
             'WEST': 'Inside laboratory'
-        }
-    },
-    'North Lab': {
-        'NAME': 'North Lab',
-        'DESCRIPTION': 'There are tools here maybe I could use them to build something.',
-        'PATHS': {
-            'SOUTH': 'Inside laboratory'
         }
     },
     'South Lab': {
@@ -178,7 +164,7 @@ world_map = {
                        'There is also something strange about how the shelf is placed.',
         'PATHS': {
             'NORTH': 'Cave',
-            'EAST': 'Tunnel' #Print what happened
+            'EAST': 'Tunnel'
         }
     },
     'Tunnel': {
@@ -218,21 +204,18 @@ class Room(object):
         self.items = items
 
 
-class SpacePart1(object):
-    def __init__(self, number=1, combination=2):
-        self.number = number
+class Part1(object):
+    def __init__(self, combination):
         self.combination = combination
 
 
-class SpacePart2(object):
-    def __init__(self, number=2, combination=3):
-        self.number = number
+class Part2(object):
+    def __init__(self, combination):
         self.combination = combination
 
 
-class SpacePart3(object):
-    def __init__(self, number=3, combination=1):
-        self.number = number
+class Part3(object):
+    def __init__(self, combination):
         self.combination = combination
 
 
@@ -242,7 +225,7 @@ class Tile(object):
 
 
 class Shelf(object):
-    def __int__(self, name):
+    def __init__(self, name):
         self.name = name
 
 
@@ -257,18 +240,26 @@ class MasterCard(object):
 
 
 class Player(object):
-    def __init__(self, starting_location, pick_up):
+    def __init__(self, starting_location, pick_up, drop):
         self.current_location = starting_location
         self.inventory = []
         self.pick_up = pick_up
+        self.drop = drop
 
     def move(self, new_location):
         self.current_location = new_location
 
+keycard = KeyCard("keycard")
+MasterCard = MasterCard("MasterCard")
+shelf = Shelf("shelf")
+tile = Tile("tile")
+part1 = Part1("part")
+part2 = Part2("part")
+part3 = Part3("part")
 
 Forest = Room('Forest', None, None, 'Town', None, None, None,
               "You are deep in the forest looking for a path out."
-              " You are blocked by trees all around you but the east.", [MasterCard("M")]
+              " You are blocked by trees all around you but the east."
               )
 Town = Room('Town', 'Park', 'Front_Yard', 'Laboratory', 'Forest', None, None,
             "The name of the town is unknown."
@@ -277,30 +268,25 @@ Town = Room('Town', 'Park', 'Front_Yard', 'Laboratory', 'Forest', None, None,
             " toward north is a park"
             " looking east you see a laboratory not so far away."
             )
-Park = Room('Park', None, 'Town', None, None, None, None, "There is nothing here but one tree left.")
+Park = Room('Park', None, 'Town', None, None, None, None, "There is nothing here but one tree left.", [part2])
 Front_Yard = Room('Front Yard', 'Town', 'Living_Room', None, None, None, None, "The house looks abandon. "
                                                                                "Go south to go in the house.")
-Living_Room = Room('Living Room', 'Front_Yard', None, None, 'Kitchen', None, None,
+Living_Room = Room('Living Room', 'Front_Yard', None, None, None, None, None,
                    'You are in the living room '
                    'and there is a keycard on the ground.'
-                   ' To the west is the kitchen and toward the south is the door to outside.', [KeyCard("keycard")]
-                   )
-Kitchen = Room('Kitchen', None, None, 'Living_Room', None, None, None,
-               'You enter the Kitchen. There is a small box on the stove.')
+                   ' Toward the south is the door to outside.', [keycard])
 Laboratory = Room('Laboratory', None, None, 'Inside_Laboratory', 'Town', None, None,
-                  'You are at the laboratory and a keycard is require to enter.')
-Inside_Laboratory = Room('Inside Laboratory', 'North_Lab', 'South_Lab', 'East_Lab', 'Laboratory', None, None,
-                         'There are 3 doors named'
-                         ' east lab, north lab, and south lab.'
-                         ' At a corner are a lot of parts'
+                  'You are at the laboratory. Go east to enter.')
+Inside_Laboratory = Room('Inside Laboratory', None, 'South_Lab', 'East_Lab', 'Laboratory', None, None,
+                         'There are 2 doors named'
+                         ' east lab, and south lab.'
+                         ' At a corner are a lot of parts', [part1]
                          )
 East_Lab = Room('East Lab', None, None, None, 'Inside_Laboratory', None, None,
-                'There is a unfinished spaceship and a blueprint on a table.')
-North_Lab = Room('North Lab', None, 'Inside_Laboratory', None, None, None, None,
-                 'There are tools here maybe I could use them to build something.')
+                'There is a unfinished spaceship and a blueprint on a table with a part next to it.', [part3])
 South_Lab = Room('South Lab', 'Inside_Laboratory', None, None, None, 'Underground_Room', None,
                  'There are tables and shelves but it is all empty.'
-                 'A tile in the floor looks odd with light coming through.', [Tile("tile")]
+                 'A tile in the floor looks odd with light coming through.', [tile]
                  )
 Underground_Room = Room('Underground Lab Room', None, 'Maze', None, None, None, None,
                         'There are shelves and broken glass everywhere.'
@@ -329,7 +315,7 @@ Cave = Room('Cave', 'SENEMaze', 'Classified_Room', None, None, None, None,
 Classified_Room = Room('Classified_Room', 'Cave', None, 'Tunnel', None, None, None,
                        'There are books and folders all over the floor and some on the shelves.'
                        'There is a folder on a table with another key card next to it.\n'
-                       'There is also something strange about this room.', [MasterCard]
+                       'There is also something strange about how the shelf is placed.', [MasterCard, shelf]
                        )
 Tunnel = Room('Tunnel', 'Wall', 'Town', None, None, None, None,
               'There is a path going up south and another going straight north')
@@ -341,13 +327,14 @@ Wall = Room('Wall', None, 'Tunnel', None, None, None, None,
             'under the dirt\n'
             'is where you will find this one part'
             )
-player = Player(Forest, pick_up=True)
+player = Player(Forest, pick_up=True, drop=True)
 
 playing = True
 directions = ['north', 'south', 'east', 'west', 'up', 'down']
 short_directions = ['n', 's', 'e', 'w', 'u', 'd']
 
 while playing:
+    print("Turn left: %d" % Turn)
     print(player.current_location.name)
     print(player.current_location.description)
     command = input(">_")
@@ -356,22 +343,115 @@ while playing:
         command = directions[pos]
     if command.lower() in ['q', 'quit', 'exit']:
         playing = False
+    elif player.current_location == Park and "dig" in command.lower():
+        print("You dug up a part.")
+        player.inventory.append(part2)
+    elif "move " in command.lower():
+        move_name = command.lower()[5:]
+        move_object = None
+
+        for item in player.current_location.items:
+            if item.name == move_name:
+                move_object = item
+
+        if move_object is not None:
+            player.current_location.remove(move_object)
+
+    elif "take " in command.lower():
+        if player.current_location.items is not None:
+            item_name = command.lower()[5:]
+            item_object = None
+            for item in player.current_location.items:
+                if item.name == item_name:
+                    item_object = item
+                elif item.name == Tile:
+                    item_object = None
+                elif item.name == Shelf:
+                    item_object = None
+            if item_object is not None:
+                player.inventory.append(item_object)
+                player.current_location.items.remove(item_object)
+                print("You took the " + item_object.name)
+        else:
+            print("there is nothing here.")
+
+    elif "pick up " in command.lower():
+        if player.current_location.items is not None:
+            item_name = command.lower()[5:]
+            item_object = None
+            for item in player.current_location.items:
+                if item.name == item_name:
+                    item_object = item
+                elif item.name == Tile:
+                    item_object = None
+                elif item.name == Shelf:
+                    item_object = None
+            if item_object is not None:
+                player.inventory.append(item_object)
+                player.current_location.items.remove(item_object)
+                print("You took the " + item_object.name)
+        else:
+            print("there is nothing here.")
+    elif "drop " in command.lower():
+        items_name = command[5:]
+        item_object = None
+
+        for items in player.inventory:
+            if items.name == items_name:
+                item_object = items
+
+        if item_object is not None:
+            player.inventory.remove(item_object)
+            player.current_location.items.append(item_object)
+            print("%s was dropped" % item_object.name)
+    elif "inventory" in command.lower():
+        if len(player.inventory) == 0:
+            print("You have nothing in your inventory.")
+        else:
+            for item in player.inventory:
+                print(item.name + "\n================")
+    elif "help" in command.lower():
+        print("To move type:\n'north','south','west','east','up','down' or 'n','s','w','e','u','d'.\n============="
+              "============================================================================================\n"
+              "To pick up an item in your location type:\n"
+              "'pick up' or 'take' then the item in your location.\n======================"
+              "==========================================================="
+              "========================\nTo exit the game type:\n'q','quit', or 'exit'.\n=========================="
+              "===============================================================================\nTo look at your"
+              " inventory type 'inventory'.\n========================================================================="
+              "================================\nTo drop an item type:\n'drop' then the item you "
+              "want to drop in your inventory\n========================================================================"
+              "=================================\nTo move an object type:\n'move' then the object\n"
+              "========================================================================="
+              "================================")
+    if player.current_location == East_Lab:
+        if [part1, part2, part3] in player.inventory:
+            print("You have completed finding all the parts to build the spaceship and had escaped successfully.")
+            playing = False
+    if Turn == 0:
+        print("You did not make it in time.")
+        playing = False
     elif command.lower() in directions:
         try:
             room_name = getattr(player.current_location, command)
+            if player.current_location == South_Lab and command.lower() in ["down", "d"]:
+                if tile in player.current_location:
+                    raise ObjectExecption
+            if player.current_location == Classified_Room and command.lower() in ["east", "e"]:
+                if shelf in player.current_location:
+                    raise ObjectExecption
+            if player.current_location == Laboratory and command.lower() in ["east", "e"]:
+                if keycard not in player.inventory:
+                    raise LockExecption
+            if player.current_location == Inside_Laboratory and command.lower() in ["east", "e"]:
+                if MasterCard not in player.inventory:
+                    raise LockExecption
+            if room_name is None:
+                raise AttributeError
+            room_object = globals()[room_name]
+            player.move(room_object)
+            Turn -= 1
 
-            if room_name in [South_Lab] and Tile in player.current_location:
-                raise ObjectExecption
-            if room_name in [Classified_Room] and Shelf in player.current_location:
-                raise ObjectExecption
-            if room_name in [Laboratory, North_Lab] and KeyCard not in player.inventory:
-                raise LockExecption
-            elif room_name is not None:
-                room_object = globals()[room_name]
-                player.move(room_object)
-
-            else:
-                raise KeyError
         except LockExecption:
             print("A keycard is needed")
         except ObjectExecption:
@@ -381,64 +461,4 @@ while playing:
             print("I can't go that way.")
         except AttributeError:
             print("This key does not exist.")
-
-    elif "move ".lower() in command:
-        move_name = command.lower()[5:]
-        move_object = None
-
-        for object in player.current_location.items:
-            if object.name == move_name:
-                object.pop()
-
-    elif "take " in command.lower():
-        item_name = command.lower()[5:]
-        item_object = None
-
-        for item in player.current_location.items:
-            if item.name == Tile:
-                item_object = None
-            if item.name == Shelf:
-                item_object = None
-            else:
-                if item.name == item_name:
-                    item_object = item
-
-        if item_object is not None:
-            player.inventory.append(item_object)
-            player.current_location.items.remove(item_object)
-            print("You took the " + item_object.name)
-
-    elif "pick up " in command.lower():
-        item_name = command.lower()[8:]
-        item_object = None
-
-        for item in player.current_location.items:
-            if item.name == Tile:
-                item_object = None
-            if item.name == Shelf:
-                item_object = None
-            else:
-                if item.name == item_name:
-                    item_object = item
-
-        if item_object is not None:
-            player.inventory.append(item_object)
-            player.current_location.items.remove(item_object)
-            print("You took the " + item_object.name)
-    elif "inventory" in command.lower():
-        if len(player.inventory) == 0:
-            print("You have nothing in your inventory.")
-        else:
-            for item in player.inventory:
-                print(item.name)
-    elif "help" in command:
-        print("To move you type:\n'north','south','west','east','up','down' or 'n','s','w','e','u','d'.\n============="
-              "============================================================================================\n"
-              "To pick up an item in your location you type:\n"
-              "'pick up' or 'take'.\n================================================================================="
-              "========================\nTo exit the game you type:\n'q','quit', or 'exit'.\n=========================="
-              "===============================================================================\nTo look at your"
-              " inventory type 'inventory'.\n========================================================================="
-              "================================")
-    else:
-        print("Command Not Recognized")
+    print()
