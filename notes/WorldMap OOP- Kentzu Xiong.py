@@ -268,7 +268,7 @@ class Player(object):
 
 Forest = Room('Forest', None, None, 'Town', None, None, None,
               "You are deep in the forest looking for a path out."
-              " You are blocked by trees all around you but the east.", [MasterCard("M")]
+              " You are blocked by trees all around you but the east.", [MasterCard("m"), KeyCard("keycard")]
               )
 Town = Room('Town', 'Park', 'Front_Yard', 'Laboratory', 'Forest', None, None,
             "The name of the town is unknown."
@@ -356,31 +356,6 @@ while playing:
         command = directions[pos]
     if command.lower() in ['q', 'quit', 'exit']:
         playing = False
-    elif command.lower() in directions:
-        try:
-            room_name = getattr(player.current_location, command)
-
-            if room_name in [South_Lab] and Tile in player.current_location:
-                raise ObjectExecption
-            if room_name in [Classified_Room] and Shelf in player.current_location:
-                raise ObjectExecption
-            if room_name in [Laboratory, North_Lab] and KeyCard not in player.inventory:
-                raise LockExecption
-            elif room_name is not None:
-                room_object = globals()[room_name]
-                player.move(room_object)
-
-            else:
-                raise KeyError
-        except LockExecption:
-            print("A keycard is needed")
-        except ObjectExecption:
-            print("You are blocked by and an object.")
-
-        except KeyError:
-            print("I can't go that way.")
-        except AttributeError:
-            print("This key does not exist.")
 
     elif "move ".lower() in command:
         move_name = command.lower()[5:]
@@ -425,13 +400,26 @@ while playing:
             player.inventory.append(item_object)
             player.current_location.items.remove(item_object)
             print("You took the " + item_object.name)
+    elif "drop " in command.lower():
+        items_name = command[5:]
+        item_object = None
+
+        for items in player.inventory:
+            if items.name == items_name:
+                item_object = items
+
+        if item_object is not None:
+            player.inventory.remove(item_object)
+            player.current_location.items.append(item_object)
+            print("%s was dropped" % item_object.name)
+
     elif "inventory" in command.lower():
         if len(player.inventory) == 0:
             print("You have nothing in your inventory.")
         else:
             for item in player.inventory:
-                print(item.name)
-    elif "help" in command:
+                print("================\n %s\n================" % item.name)
+    elif "help" in command.lower():
         print("To move you type:\n'north','south','west','east','up','down' or 'n','s','w','e','u','d'.\n============="
               "============================================================================================\n"
               "To pick up an item in your location you type:\n"
@@ -440,5 +428,31 @@ while playing:
               "===============================================================================\nTo look at your"
               " inventory type 'inventory'.\n========================================================================="
               "================================")
+
+    elif command.lower() in directions:
+        try:
+            room_name = getattr(player.current_location, command)
+
+            if room_name in [South_Lab] and Tile in player.current_location:
+                raise ObjectExecption
+            if room_name in [Classified_Room] and Shelf in player.current_location:
+                raise ObjectExecption
+            if player.current_location == Laboratory and command.lower() in ["east", "e"]:
+                if KeyCard not in player.inventory:
+                    raise LockExecption
+            if room_name is None:
+                raise AttributeError
+            room_object = globals()[room_name]
+            player.move(room_object)
+
+        except LockExecption:
+            print("A keycard is needed")
+        except ObjectExecption:
+            print("You are blocked by and an object.")
+
+        except KeyError:
+            print("I can't go that way.")
+        except AttributeError:
+            print("This key does not exist.")
     else:
         print("Command Not Recognized")
