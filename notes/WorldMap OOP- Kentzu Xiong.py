@@ -280,10 +280,10 @@ Laboratory = Room('Laboratory', None, None, 'Inside_Laboratory', 'Town', None, N
 Inside_Laboratory = Room('Inside Laboratory', None, 'South_Lab', 'East_Lab', 'Laboratory', None, None,
                          'There are 2 doors named'
                          ' east lab, and south lab.'
-                         ' At a corner are a lot of parts', [part1]
+                         ' At a corner is part1', [part1]
                          )
 East_Lab = Room('East Lab', None, None, None, 'Inside_Laboratory', None, None,
-                'There is a unfinished spaceship and a blueprint on a table with a part next to it.', [part3])
+                'There is a unfinished spaceship and a part3 next to it.', [part3])
 South_Lab = Room('South Lab', 'Inside_Laboratory', None, None, None, 'Underground_Room', None,
                  'There are tables and shelves but it is all empty.'
                  'A tile in the floor looks odd with light coming through.', [tile]
@@ -377,7 +377,7 @@ while playing:
 
     elif "pick up " in command.lower():
         if player.current_location.items is not None:
-            item_name = command.lower()[5:]
+            item_name = command.lower()[8:]
             item_object = None
             for item in player.current_location.items:
                 if item.name == item_name:
